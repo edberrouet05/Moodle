@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mini Moodle</string>
+
+    <!-- Auth -->
+    <string name="label_courriel">Courriel</string>
+    <string name="label_mot_de_passe">Mot de passe</string>
+    <string name="label_nom">Nom</string>
+    <string name="label_prenom">Prénom</string>
+    <string name="label_telephone">Téléphone (optionnel)</string>
+    <string name="label_photo_profil">Photo de profil (URL, optionnel)</string>
+    <string name="btn_connexion">Se connecter</string>
+    <string name="btn_inscription">S\'inscrire</string>
+    <string name="lien_inscription">Pas encore de compte ? S\'inscrire</string>
+    <string name="lien_connexion">Déjà un compte ? Se connecter</string>
+    <string name="erreur_champs_vides">Veuillez remplir tous les champs obligatoires</string>
+    <string name="erreur_connexion">Courriel ou mot de passe incorrect</string>
+
+    <!-- Navigation -->
+    <string name="nav_tableau_de_bord">Tableau de bord</string>
+    <string name="nav_cours">Cours</string>
+    <string name="nav_profil">Profil</string>
+
+    <!-- Dashboard -->
+    <string name="titre_tableau_de_bord">Tableau de bord</string>
+    <string name="titre_mes_cours">Mes cours</string>
+
+    <!-- Cours -->
+    <string name="titre_cours">Cours</string>
+    <string name="label_sigle">Sigle</string>
+    <string name="label_credits">Crédits</string>
+    <string name="label_description">Description</string>
+    <string name="titre_travaux">Travaux</string>
+    <string name="titre_quiz">Quiz</string>
+
+    <!-- Général -->
+    <string name="chargement">Chargement…</string>
+    <string name="erreur_reseau">Impossible de contacter le serveur</string>
+    <string name="btn_retour">Retour</string>
+    <string name="btn_deconnexion">Se déconnecter</string>
+</resources>

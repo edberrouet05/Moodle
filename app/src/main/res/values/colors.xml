@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="couleur_primaire">#1565C0</color>
+    <color name="couleur_primaire_fonce">#0D47A1</color>
+    <color name="couleur_secondaire">#FF6F00</color>
+    <color name="blanc">#FFFFFF</color>
+    <color name="gris_clair">#F5F5F5</color>
+    <color name="gris">#9E9E9E</color>
+    <color name="texte_principal">#212121</color>
+    <color name="texte_secondaire">#757575</color>
+    <color name="vert_succes">#388E3C</color>
+    <color name="rouge_erreur">#C62828</color>
+    <color name="orange_retard">#E65100</color>
+    <color name="violet_corrige">#6A1B9A</color>
+</resources>

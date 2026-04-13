@@ -1,0 +1,448 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nom": "Tremblay",
+      "prenom": "Sara",
+      "courriel": "sara@etsmtl.ca",
+      "motDePasse": "sara123",
+      "programme": "Génie logiciel"
+    },
+    {
+      "id": 2,
+      "nom": "Gagnon",
+      "prenom": "Mylene",
+      "courriel": "mylene@etsmtl.ca",
+      "motDePasse": "mylene123",
+      "programme": "Génie des technologies de l'information"
+    },
+    {
+      "id": "d66f",
+      "nom": "Chen",
+      "prenom": "Lee",
+      "courriel": "lee@etsmtl.ca",
+      "motDePasse": "lee123",
+      "programme": "Génie logiciel"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "sigle": "TCH017",
+      "titre": "Programmation orientée objet",
+      "credits": 3,
+      "description": "Introduction à la programmation orientée objet avec Java.",
+      "enseignant": "Prof. Dupont",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "sigle": "TCH055",
+      "titre": "Structures de données",
+      "credits": 3,
+      "description": "Étude des structures de données fondamentales et de leurs algorithmes.",
+      "enseignant": "Prof. Martin",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "sigle": "TCH057",
+      "titre": "Applications mobiles et expérience usager",
+      "credits": 3,
+      "description": "Développement d'applications mobiles Android avec une approche centrée sur l'utilisateur.",
+      "enseignant": "Prof. Lavoie",
+      "userId": 1
+    },
+    {
+      "id": 4,
+      "sigle": "TCH056",
+      "titre": "Bases de données",
+      "credits": 3,
+      "description": "Conception et gestion de bases de données relationnelles.",
+      "enseignant": "Prof. Tremblay",
+      "userId": 2
+    },
+    {
+      "id": 5,
+      "sigle": "TCH016",
+      "titre": "Réseaux informatiques",
+      "credits": 3,
+      "description": "Principes fondamentaux des réseaux informatiques et protocoles de communication.",
+      "enseignant": "Prof. Bélanger",
+      "userId": 2
+    },
+    {
+      "id": 6,
+      "sigle": "TCH013",
+      "titre": "Systèmes d'exploitation",
+      "credits": 3,
+      "description": "Concepts fondamentaux des systèmes d'exploitation modernes.",
+      "enseignant": "Prof. Côté",
+      "userId": "d66f"
+    }
+  ],
+  "assignments": [
+    {
+      "id": 1,
+      "titre": "TP1 - Héritage et polymorphisme",
+      "description": "Implémenter une hiérarchie de classes utilisant l'héritage et le polymorphisme en Java.",
+      "dateRemise": "2026-02-15",
+      "note": 85,
+      "noteMax": 100,
+      "remis": true,
+      "courseId": 1
+    },
+    {
+      "id": 2,
+      "titre": "TP2 - Patrons de conception",
+      "description": "Implémenter trois patrons de conception (Singleton, Factory, Observer).",
+      "dateRemise": "2026-03-20",
+      "note": null,
+      "noteMax": 100,
+      "remis": false,
+      "courseId": 1
+    },
+    {
+      "id": 3,
+      "titre": "TP1 - Listes chaînées",
+      "description": "Implémenter une liste doublement chaînée avec toutes les opérations de base.",
+      "dateRemise": "2026-02-20",
+      "note": 92,
+      "noteMax": 100,
+      "remis": true,
+      "courseId": 2
+    },
+    {
+      "id": 4,
+      "titre": "TP2 - Arbres et graphes",
+      "description": "Implémenter un arbre binaire de recherche et un algorithme de parcours en largeur.",
+      "dateRemise": "2026-03-25",
+      "note": null,
+      "noteMax": 100,
+      "remis": false,
+      "courseId": 2
+    },
+    {
+      "id": 5,
+      "titre": "TP1 - Maquettes Figma",
+      "description": "Concevoir les maquettes haute-fidélité de l'application mobile dans Figma.",
+      "dateRemise": "2026-02-28",
+      "note": 88,
+      "noteMax": 100,
+      "remis": true,
+      "courseId": 3
+    },
+    {
+      "id": 6,
+      "titre": "Projet de session - Mini Moodle",
+      "description": "Développer une application Android Mini Moodle avec MVVM, JSON Server et SQLite.",
+      "dateRemise": "2026-04-19",
+      "note": null,
+      "noteMax": 100,
+      "remis": false,
+      "courseId": 3
+    },
+    {
+      "id": 7,
+      "titre": "TP1 - Modélisation E/R",
+      "description": "Concevoir un diagramme entité-relation pour un système de bibliothèque.",
+      "dateRemise": "2026-02-18",
+      "note": 78,
+      "noteMax": 100,
+      "remis": true,
+      "courseId": 4
+    },
+    {
+      "id": 8,
+      "titre": "TP2 - Requêtes SQL avancées",
+      "description": "Écrire des requêtes SQL complexes avec jointures, sous-requêtes et agrégations.",
+      "dateRemise": "2026-03-28",
+      "note": null,
+      "noteMax": 100,
+      "remis": false,
+      "courseId": 4
+    },
+    {
+      "id": 9,
+      "titre": "TP1 - Protocoles réseau",
+      "description": "Analyser des trames réseau avec Wireshark et identifier les protocoles utilisés.",
+      "dateRemise": "2026-02-22",
+      "note": 91,
+      "noteMax": 100,
+      "remis": true,
+      "courseId": 5
+    },
+    {
+      "id": 10,
+      "titre": "TP2 - Configuration réseau",
+      "description": "Configurer un réseau local avec routage statique et dynamique.",
+      "dateRemise": "2026-04-05",
+      "note": null,
+      "noteMax": 100,
+      "remis": false,
+      "courseId": 5
+    },
+    {
+      "id": 11,
+      "titre": "TP1 - Appels systèmes",
+      "description": "Implémenter des programmes utilisant les appels systèmes POSIX.",
+      "dateRemise": "2026-02-25",
+      "note": 83,
+      "noteMax": 100,
+      "remis": true,
+      "courseId": 6
+    },
+    {
+      "id": 12,
+      "titre": "TP2 - Gestion de processus",
+      "description": "Implémenter un ordonnanceur de processus avec les algorithmes FIFO et Round-Robin.",
+      "dateRemise": "2026-04-10",
+      "note": null,
+      "noteMax": 100,
+      "remis": false,
+      "courseId": 6
+    }
+  ],
+  "quizzes": [
+    {
+      "id": 1,
+      "titre": "Quiz 1 - POO fondamentaux",
+      "courseId": 1,
+      "questions": [
+        {
+          "id": 1,
+          "enonce": "Qu'est-ce que l'encapsulation en POO ?",
+          "choix": ["Cacher les détails d'implémentation", "Créer plusieurs instances", "Hériter d'une classe", "Définir une interface"],
+          "bonneReponse": 0
+        },
+        {
+          "id": 2,
+          "enonce": "Quel mot-clé permet l'héritage en Java ?",
+          "choix": ["implements", "extends", "inherits", "super"],
+          "bonneReponse": 1
+        },
+        {
+          "id": 3,
+          "enonce": "Qu'est-ce qu'une interface en Java ?",
+          "choix": ["Une classe abstraite", "Un contrat de méthodes", "Un type primitif", "Un modificateur d'accès"],
+          "bonneReponse": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "titre": "Quiz 2 - Patrons de conception",
+      "courseId": 1,
+      "questions": [
+        {
+          "id": 1,
+          "enonce": "Le patron Singleton garantit :",
+          "choix": ["Plusieurs instances", "Une seule instance", "L'héritage multiple", "La sérialisation"],
+          "bonneReponse": 1
+        },
+        {
+          "id": 2,
+          "enonce": "Le patron Observer est utilisé pour :",
+          "choix": ["Créer des objets", "Notifier des changements", "Structurer du code", "Optimiser les performances"],
+          "bonneReponse": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "titre": "Quiz 1 - Structures linéaires",
+      "courseId": 2,
+      "questions": [
+        {
+          "id": 1,
+          "enonce": "La complexité de recherche dans une liste chaînée est :",
+          "choix": ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+          "bonneReponse": 2
+        },
+        {
+          "id": 2,
+          "enonce": "Une pile (stack) suit le principe :",
+          "choix": ["FIFO", "LIFO", "FILO", "LILO"],
+          "bonneReponse": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "titre": "Quiz 2 - Arbres et graphes",
+      "courseId": 2,
+      "questions": [
+        {
+          "id": 1,
+          "enonce": "Un arbre binaire de recherche garantit :",
+          "choix": ["Sous-arbre gauche > racine", "Sous-arbre gauche < racine", "Tous les noeuds égaux", "Aucune propriété particulière"],
+          "bonneReponse": 1
+        },
+        {
+          "id": 2,
+          "enonce": "Le parcours en ordre (inorder) d'un ABR donne :",
+          "choix": ["Valeurs aléatoires", "Valeurs croissantes", "Valeurs décroissantes", "Valeurs par niveau"],
+          "bonneReponse": 1
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "titre": "Quiz 1 - Android et MVVM",
+      "courseId": 3,
+      "questions": [
+        {
+          "id": 1,
+          "enonce": "Dans MVVM, le ViewModel sert à :",
+          "choix": ["Afficher l'interface", "Gérer la logique métier et l'état", "Stocker les données en base", "Gérer le réseau"],
+          "bonneReponse": 1
+        },
+        {
+          "id": 2,
+          "enonce": "LiveData permet de :",
+          "choix": ["Faire des requêtes HTTP", "Observer les données de façon réactive", "Créer des layouts", "Gérer les permissions"],
+          "bonneReponse": 1
+        },
+        {
+          "id": 3,
+          "enonce": "L'adresse du serveur JSON depuis l'émulateur Android est :",
+          "choix": ["localhost:3000", "127.0.0.1:3000", "10.0.2.2:3000", "192.168.1.1:3000"],
+          "bonneReponse": 2
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "titre": "Quiz 2 - UX et ergonomie",
+      "courseId": 3,
+      "questions": [
+        {
+          "id": 1,
+          "enonce": "Combien de critères ergonomiques Bastien et Scapin ont-ils définis ?",
+          "choix": ["5", "8", "10", "12"],
+          "bonneReponse": 1
+        },
+        {
+          "id": 2,
+          "enonce": "Le critère de 'guidage' en ergonomie concerne :",
+          "choix": ["La vitesse de l'application", "L'aide à l'orientation et la rétroaction", "La sécurité des données", "La compatibilité"],
+          "bonneReponse": 1
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "titre": "Quiz 1 - SQL de base",
+      "courseId": 4,
+      "questions": [
+        {
+          "id": 1,
+          "enonce": "Quelle commande SQL permet de récupérer des données ?",
+          "choix": ["INSERT", "UPDATE", "SELECT", "DELETE"],
+          "bonneReponse": 2
+        },
+        {
+          "id": 2,
+          "enonce": "Une clé primaire doit être :",
+          "choix": ["Nulle", "Unique et non nulle", "Dupliquée", "Optionnelle"],
+          "bonneReponse": 1
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "titre": "Quiz 2 - Normalisation",
+      "courseId": 4,
+      "questions": [
+        {
+          "id": 1,
+          "enonce": "La 3NF (troisième forme normale) élimine :",
+          "choix": ["Les doublons", "Les dépendances transitives", "Les clés étrangères", "Les index"],
+          "bonneReponse": 1
+        },
+        {
+          "id": 2,
+          "enonce": "Une jointure externe gauche (LEFT JOIN) retourne :",
+          "choix": ["Seulement les correspondances", "Tous les enregistrements de la table gauche", "Tous les enregistrements des deux tables", "Aucun enregistrement"],
+          "bonneReponse": 1
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "titre": "Quiz 1 - Modèle OSI",
+      "courseId": 5,
+      "questions": [
+        {
+          "id": 1,
+          "enonce": "Combien de couches comporte le modèle OSI ?",
+          "choix": ["4", "5", "7", "9"],
+          "bonneReponse": 2
+        },
+        {
+          "id": 2,
+          "enonce": "Le protocole TCP fonctionne à la couche :",
+          "choix": ["Réseau", "Transport", "Session", "Application"],
+          "bonneReponse": 1
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "titre": "Quiz 2 - Protocoles applicatifs",
+      "courseId": 5,
+      "questions": [
+        {
+          "id": 1,
+          "enonce": "Le protocole HTTP utilise par défaut le port :",
+          "choix": ["21", "22", "80", "443"],
+          "bonneReponse": 2
+        },
+        {
+          "id": 2,
+          "enonce": "DNS sert à :",
+          "choix": ["Chiffrer les données", "Résoudre les noms de domaine en adresses IP", "Router les paquets", "Filtrer les connexions"],
+          "bonneReponse": 1
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "titre": "Quiz 1 - Processus et threads",
+      "courseId": 6,
+      "questions": [
+        {
+          "id": 1,
+          "enonce": "Un processus zombie est :",
+          "choix": ["Un processus malveillant", "Un processus terminé dont l'entrée n'est pas retirée de la table", "Un processus en attente", "Un processus bloqué"],
+          "bonneReponse": 1
+        },
+        {
+          "id": 2,
+          "enonce": "L'ordonnancement Round-Robin utilise :",
+          "choix": ["Des priorités fixes", "Un quantum de temps", "La date d'arrivée uniquement", "La taille des processus"],
+          "bonneReponse": 1
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "titre": "Quiz 2 - Mémoire virtuelle",
+      "courseId": 6,
+      "questions": [
+        {
+          "id": 1,
+          "enonce": "La pagination en mémoire virtuelle divise la mémoire en :",
+          "choix": ["Segments variables", "Pages de taille fixe", "Blocs dynamiques", "Régions continues"],
+          "bonneReponse": 1
+        },
+        {
+          "id": 2,
+          "enonce": "Un défaut de page (page fault) se produit quand :",
+          "choix": ["La mémoire est pleine", "Une page demandée n'est pas en RAM", "Le processeur est surchargé", "Le disque est plein"],
+          "bonneReponse": 1
+        }
+      ]
+    }
+  ]
+}

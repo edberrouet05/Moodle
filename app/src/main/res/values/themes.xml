@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MiniMoodle" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/couleur_primaire</item>
+        <item name="colorPrimaryDark">@color/couleur_primaire_fonce</item>
+        <item name="colorAccent">@color/couleur_secondaire</item>
+        <item name="android:windowBackground">@color/blanc</item>
+    </style>
+
+    <style name="Theme.MiniMoodle.NoActionBar" parent="Theme.MiniMoodle">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+</resources>
