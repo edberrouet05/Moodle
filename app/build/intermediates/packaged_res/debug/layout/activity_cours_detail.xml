@@ -94,39 +94,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Carte annonces -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_annonces"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Annonces"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/texte_principal" />
-
-                <LinearLayout
-                    android:id="@+id/ll_annonces"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="6dp" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
         <!-- Boutons navigation -->
         <Button
             android:id="@+id/btn_voir_travaux"
