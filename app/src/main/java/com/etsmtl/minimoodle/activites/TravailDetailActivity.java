@@ -1,5 +1,6 @@
 package com.etsmtl.minimoodle.activites;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -12,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.etsmtl.minimoodle.R;
 import com.etsmtl.minimoodle.adaptateurs.TravailAdapter;
-import com.etsmtl.minimoodle.bd.MoodleDatabase;
 import com.etsmtl.minimoodle.vuemodeles.TravailViewModel;
 
 import java.util.ArrayList;
@@ -22,18 +22,15 @@ public class TravailDetailActivity extends AppCompatActivity {
     private TravailViewModel travailViewModel;
     private TravailAdapter travailAdapter;
     private ProgressBar progressBar;
-    private String userId;
+    private String coursId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travail_detail);
 
-        String coursId = getIntent().getStringExtra("COURS_ID");
+        coursId = getIntent().getStringExtra("COURS_ID");
         String coursTitre = getIntent().getStringExtra("COURS_TITRE");
-
-        String[] session = MoodleDatabase.getInstance(this).getSession();
-        userId = (session != null) ? session[0] : "";
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(getString(R.string.titre_travaux));
@@ -44,11 +41,11 @@ public class TravailDetailActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.rv_travaux);
 
         travailAdapter = new TravailAdapter(new ArrayList<>(), travail -> {
-            if (!travail.isRemis() && !MoodleDatabase.getInstance(this).estSoumisLocalement(travail.getId())) {
-                travailViewModel.soumettreTravail(travail.getId());
-            } else {
-                Toast.makeText(this, "Ce travail a déjà été remis.", Toast.LENGTH_SHORT).show();
-            }
+            Intent intent = new Intent(this, TravailInfoActivity.class);
+            intent.putExtra("TRAVAIL_ID", travail.getId());
+            intent.putExtra("COURS_ID", coursId);
+            intent.putExtra("TRAVAIL_TITRE", travail.getTitre());
+            startActivity(intent);
         });
 
 
@@ -62,16 +59,6 @@ public class TravailDetailActivity extends AppCompatActivity {
             travailAdapter.mettreAJour(travaux);
         });
 
-        travailViewModel.getTravailSoumis().observe(this, travail -> {
-            if (travail != null) {
-                MoodleDatabase.getInstance(this).marquerSoumisLocalement(travail.getId(), userId);
-                Toast.makeText(this, "Travail remis avec succès !", Toast.LENGTH_SHORT).show();
-                travailViewModel.reinitialiserTravailSoumis();
-                travailViewModel.chargerTravailByCourseId(coursId);
-            }
-        });
-
-
         travailViewModel.getErreur().observe(this, message -> {
             progressBar.setVisibility(View.GONE);
             if (message != null) {
@@ -79,6 +66,11 @@ public class TravailDetailActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         progressBar.setVisibility(View.VISIBLE);
         travailViewModel.chargerTravailByCourseId(coursId);
     }
