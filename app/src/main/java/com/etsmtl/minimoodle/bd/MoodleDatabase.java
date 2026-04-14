@@ -185,7 +185,7 @@ public class MoodleDatabase extends SQLiteOpenHelper {
         ContentValues cv = new ContentValues();
         cv.put(COL_TRAVAIL_ID, travailId);
         cv.put(COL_USER_ID, userId);
-        db.insertOrThrow(TABLE_SOUMISSIONS, null, cv);
+        db.insertWithOnConflict(TABLE_SOUMISSIONS, null, cv, SQLiteDatabase.CONFLICT_IGNORE);
     }
 
     public boolean estSoumisLocalement(String travailId) {

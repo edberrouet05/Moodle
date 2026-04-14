@@ -57,6 +57,10 @@ public class TravailViewModel extends ViewModel {
         }
     }
 
+    public void reinitialiserTravailSoumis() {
+        travailSoumisLiveData.postValue(null);
+    }
+
     public void soumettreTravail(String travailId) {
         try {
             TravailDao.soumettreTravail(travailId, new EcouteurDeDonnees() {

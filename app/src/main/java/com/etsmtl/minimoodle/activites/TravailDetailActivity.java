@@ -66,6 +66,7 @@ public class TravailDetailActivity extends AppCompatActivity {
             if (travail != null) {
                 MoodleDatabase.getInstance(this).marquerSoumisLocalement(travail.getId(), userId);
                 Toast.makeText(this, "Travail remis avec succès !", Toast.LENGTH_SHORT).show();
+                travailViewModel.reinitialiserTravailSoumis();
                 travailViewModel.chargerTravailByCourseId(coursId);
             }
         });
