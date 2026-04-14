@@ -45,9 +45,6 @@ public class CoursListActivity extends AppCompatActivity {
             intent.putExtra("COURS_DESCRIPTION", cours.getDescription());
             intent.putExtra("COURS_ENSEIGNANT", cours.getEnseignant());
             intent.putExtra("COURS_SESSION", cours.getSession());
-            if (cours.getAnnonces() != null) {
-                intent.putStringArrayListExtra("COURS_ANNONCES", new ArrayList<>(cours.getAnnonces()));
-            }
             startActivity(intent);
         });
 

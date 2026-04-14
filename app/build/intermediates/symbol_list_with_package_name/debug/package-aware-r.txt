@@ -3191,7 +3191,6 @@ id buttonPanel
 id cache_measures
 id callMeasure
 id cancel_button
-id card_annonces
 id card_commentaire
 id card_description
 id card_instructions

@@ -2,9 +2,12 @@ package com.etsmtl.minimoodle.activites;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -67,9 +70,6 @@ public class DashboardActivity extends AppCompatActivity {
             intent.putExtra("COURS_DESCRIPTION", cours.getDescription());
             intent.putExtra("COURS_ENSEIGNANT", cours.getEnseignant());
             intent.putExtra("COURS_SESSION", cours.getSession());
-            if (cours.getAnnonces() != null) {
-                intent.putStringArrayListExtra("COURS_ANNONCES", new ArrayList<>(cours.getAnnonces()));
-            }
             startActivity(intent);
         });
 
@@ -101,7 +101,44 @@ public class DashboardActivity extends AppCompatActivity {
         travailViewModel = new ViewModelProvider(this).get(TravailViewModel.class);
         quizViewModel = new ViewModelProvider(this).get(QuizViewModel.class);
 
-        coursViewModel.getListeCours().observe(this, cours -> coursAdapter.mettreAJour(cours));
+        LinearLayout llAnnonces = findViewById(R.id.ll_annonces);
+
+        coursViewModel.getListeCours().observe(this, cours -> {
+            coursAdapter.mettreAJour(cours);
+            llAnnonces.removeAllViews();
+            for (com.etsmtl.minimoodle.modeles.Cours c : cours) {
+                if (c.getAnnonces() == null || c.getAnnonces().isEmpty()) continue;
+                for (String annonce : c.getAnnonces()) {
+                    CardView card = new CardView(this);
+                    CardView.LayoutParams cardParams = new CardView.LayoutParams(
+                            CardView.LayoutParams.MATCH_PARENT, CardView.LayoutParams.WRAP_CONTENT);
+                    cardParams.setMargins(0, 0, 0, 8);
+                    card.setLayoutParams(cardParams);
+                    card.setRadius(8f);
+                    card.setCardElevation(3f);
+
+                    LinearLayout inner = new LinearLayout(this);
+                    inner.setOrientation(LinearLayout.VERTICAL);
+                    inner.setPadding(32, 24, 32, 24);
+
+                    TextView tvSigle = new TextView(this);
+                    tvSigle.setText(c.getSigle());
+                    tvSigle.setTextSize(12f);
+                    tvSigle.setTextColor(getColor(R.color.couleur_primaire));
+                    tvSigle.setTypeface(null, android.graphics.Typeface.BOLD);
+
+                    TextView tvAnnonce = new TextView(this);
+                    tvAnnonce.setText(annonce);
+                    tvAnnonce.setTextSize(14f);
+                    tvAnnonce.setPadding(0, 4, 0, 0);
+
+                    inner.addView(tvSigle);
+                    inner.addView(tvAnnonce);
+                    card.addView(inner);
+                    llAnnonces.addView(card);
+                }
+            }
+        });
         coursViewModel.getErreur().observe(this, msg -> {
             if (msg != null) android.widget.Toast.makeText(this, "Cours : " + msg, android.widget.Toast.LENGTH_LONG).show();
         });

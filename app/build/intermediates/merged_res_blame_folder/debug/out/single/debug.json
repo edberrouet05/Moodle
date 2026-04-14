@@ -12,10 +12,6 @@
         "source": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-main-35:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_activity_cours_list.xml.flat",
-        "source": "com.etsmtl.minimoodle.app-main-35:/layout/activity_cours_list.xml"
-    },
-    {
         "merged": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-merged_res-33:\\layout_activity_quiz_resultat.xml.flat",
         "source": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-main-35:\\layout\\activity_quiz_resultat.xml"
     },
@@ -68,6 +64,10 @@
         "source": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-main-35:\\drawable\\ic_launcher_foreground.xml"
     },
     {
+        "merged": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-merged_res-33:\\layout_activity_travail_info.xml.flat",
+        "source": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-main-35:\\layout\\activity_travail_info.xml"
+    },
+    {
         "merged": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-merged_res-33:\\layout_item_cours.xml.flat",
         "source": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-main-35:\\layout\\item_cours.xml"
     },
@@ -80,11 +80,11 @@
         "source": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-main-35:\\layout\\activity_quiz.xml"
     },
     {
-        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_activity_travail_info.xml.flat",
-        "source": "com.etsmtl.minimoodle.app-main-35:/layout/activity_travail_info.xml"
-    },
-    {
         "merged": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-merged_res-33:\\layout_activity_cours_detail.xml.flat",
         "source": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-main-35:\\layout\\activity_cours_detail.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_activity_dashboard.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/activity_dashboard.xml"
     }
 ]
