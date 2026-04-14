@@ -24,7 +24,6 @@ id btn_soumettre
 id btn_suivant
 id btn_voir_quiz
 id btn_voir_travaux
-id card_annonces
 id card_commentaire
 id card_description
 id card_instructions
