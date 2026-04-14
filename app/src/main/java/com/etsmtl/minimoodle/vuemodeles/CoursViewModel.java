@@ -39,16 +39,28 @@ public class CoursViewModel extends ViewModel {
     }
 
     public void chargerCoursParIds(String idsInscritsStr) {
-        if (idsInscritsStr == null || idsInscritsStr.isEmpty()) {
-            chargerCours();
-            return;
+        final List<String> ids;
+        if (idsInscritsStr != null && !idsInscritsStr.isEmpty()) {
+            ids = Arrays.asList(idsInscritsStr.split(","));
+        } else {
+            ids = null;
         }
-        List<String> ids = Arrays.asList(idsInscritsStr.split(","));
         try {
-            CoursDao.getCoursParIds(ids, new EcouteurDeDonnees() {
+            CoursDao.getCours(new EcouteurDeDonnees() {
                 @Override
                 public void onDataLoaded(Object data) {
-                    listeCoursLiveData.postValue((List<Cours>) data);
+                    List<Cours> tousLesCours = (List<Cours>) data;
+                    if (ids == null) {
+                        listeCoursLiveData.postValue(tousLesCours);
+                    } else {
+                        List<Cours> filtres = new java.util.ArrayList<>();
+                        for (Cours c : tousLesCours) {
+                            if (ids.contains(c.getId())) {
+                                filtres.add(c);
+                            }
+                        }
+                        listeCoursLiveData.postValue(filtres);
+                    }
                 }
 
                 @Override
