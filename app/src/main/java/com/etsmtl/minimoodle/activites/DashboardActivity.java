@@ -64,6 +64,12 @@ public class DashboardActivity extends AppCompatActivity {
             intent.putExtra("COURS_ID", cours.getId());
             intent.putExtra("COURS_TITRE", cours.getTitre());
             intent.putExtra("COURS_SIGLE", cours.getSigle());
+            intent.putExtra("COURS_DESCRIPTION", cours.getDescription());
+            intent.putExtra("COURS_ENSEIGNANT", cours.getEnseignant());
+            intent.putExtra("COURS_SESSION", cours.getSession());
+            if (cours.getAnnonces() != null) {
+                intent.putStringArrayListExtra("COURS_ANNONCES", new ArrayList<>(cours.getAnnonces()));
+            }
             startActivity(intent);
         });
 

@@ -30,6 +30,7 @@
         <activity android:name=".activites.QuizActivity" />
         <activity android:name=".activites.QuizResultatActivity" />
         <activity android:name=".activites.ProfilActivity" />
+        <activity android:name=".activites.TravailInfoActivity" />
 
     </application>
 
