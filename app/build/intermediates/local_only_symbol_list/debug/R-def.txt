@@ -20,10 +20,14 @@ id btn_deconnexion
 id btn_inscription
 id btn_modifier_profil
 id btn_retour_cours
+id btn_soumettre
 id btn_suivant
 id btn_voir_quiz
 id btn_voir_travaux
-id card_info_cours
+id card_annonces
+id card_commentaire
+id card_description
+id card_instructions
 id champ_courriel
 id champ_edit_mot_de_passe
 id champ_edit_photo
@@ -44,6 +48,7 @@ id layout_programme
 id layout_telephone
 id lien_connexion
 id lien_inscription
+id ll_annonces
 id nav_cours
 id nav_profil
 id nav_tableau_de_bord
@@ -62,12 +67,17 @@ id rv_travaux
 id rv_travaux_recents
 id scroll_profil
 id scroll_view
+id search_view
 id txt_bienvenue
+id txt_commentaire
 id txt_courriel_profil
 id txt_credits
 id txt_date_item
 id txt_date_remise
+id txt_description
 id txt_enonce
+id txt_enseignant
+id txt_instructions
 id txt_message_resultat
 id txt_nb_questions
 id txt_nom_complet
@@ -77,6 +87,7 @@ id txt_programme_profil
 id txt_progression
 id txt_score
 id txt_score_item
+id txt_session
 id txt_sigle
 id txt_sigle_cours
 id txt_sous_titre
@@ -100,6 +111,7 @@ layout activity_quiz_list
 layout activity_quiz_resultat
 layout activity_register
 layout activity_travail_detail
+layout activity_travail_info
 layout item_cours
 layout item_quiz
 layout item_resultat_quiz

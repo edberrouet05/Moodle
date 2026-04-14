@@ -3183,6 +3183,7 @@ id btn_deconnexion
 id btn_inscription
 id btn_modifier_profil
 id btn_retour_cours
+id btn_soumettre
 id btn_suivant
 id btn_voir_quiz
 id btn_voir_travaux
@@ -3190,7 +3191,10 @@ id buttonPanel
 id cache_measures
 id callMeasure
 id cancel_button
-id card_info_cours
+id card_annonces
+id card_commentaire
+id card_description
+id card_instructions
 id carryVelocity
 id center
 id centerCrop
@@ -3348,6 +3352,7 @@ id line3
 id linear
 id listMode
 id list_item
+id ll_annonces
 id m3_side_sheet
 id marquee
 id masked
@@ -3512,6 +3517,7 @@ id search_go_btn
 id search_mag_icon
 id search_plate
 id search_src_text
+id search_view
 id search_voice_btn
 id select_dialog_listview
 id selected
@@ -3601,11 +3607,15 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id txt_bienvenue
+id txt_commentaire
 id txt_courriel_profil
 id txt_credits
 id txt_date_item
 id txt_date_remise
+id txt_description
 id txt_enonce
+id txt_enseignant
+id txt_instructions
 id txt_message_resultat
 id txt_nb_questions
 id txt_nom_complet
@@ -3615,6 +3625,7 @@ id txt_programme_profil
 id txt_progression
 id txt_score
 id txt_score_item
+id txt_session
 id txt_sigle
 id txt_sigle_cours
 id txt_sous_titre
@@ -3775,6 +3786,7 @@ layout activity_quiz_list
 layout activity_quiz_resultat
 layout activity_register
 layout activity_travail_detail
+layout activity_travail_info
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
