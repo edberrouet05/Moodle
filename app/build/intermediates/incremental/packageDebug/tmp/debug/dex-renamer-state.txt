@@ -1,14 +1,14 @@
-#Tue Apr 14 12:03:16 EDT 2026
-base.0=C\:\\Users\\dande\\Moodle\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\dande\\Moodle\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\dande\\Moodle\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
-base.3=C\:\\Users\\dande\\Moodle\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
-base.4=C\:\\Users\\dande\\Moodle\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.5=C\:\\Users\\dande\\Moodle\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
-base.6=C\:\\Users\\dande\\Moodle\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
-base.7=C\:\\Users\\dande\\Moodle\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
-base.8=C\:\\Users\\dande\\Moodle\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
-base.9=C\:\\Users\\dande\\Moodle\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+#Tue Apr 14 12:25:01 EDT 2026
+base.0=C\:\\Users\\Jason\\TPAndroid\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\Jason\\TPAndroid\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\Jason\\TPAndroid\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
+base.3=C\:\\Users\\Jason\\TPAndroid\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
+base.4=C\:\\Users\\Jason\\TPAndroid\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.5=C\:\\Users\\Jason\\TPAndroid\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
+base.6=C\:\\Users\\Jason\\TPAndroid\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
+base.7=C\:\\Users\\Jason\\TPAndroid\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
+base.8=C\:\\Users\\Jason\\TPAndroid\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
+base.9=C\:\\Users\\Jason\\TPAndroid\\Moodle\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=10/classes.dex
