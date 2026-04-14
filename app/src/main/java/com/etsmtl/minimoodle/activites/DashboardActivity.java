@@ -96,6 +96,13 @@ public class DashboardActivity extends AppCompatActivity {
         quizViewModel = new ViewModelProvider(this).get(QuizViewModel.class);
 
         coursViewModel.getListeCours().observe(this, cours -> coursAdapter.mettreAJour(cours));
+        coursViewModel.getErreur().observe(this, msg -> {
+            if (msg != null) android.widget.Toast.makeText(this, "Cours : " + msg, android.widget.Toast.LENGTH_LONG).show();
+        });
+
+        travailViewModel.getErreur().observe(this, msg -> {
+            if (msg != null) android.widget.Toast.makeText(this, "Travaux : " + msg, android.widget.Toast.LENGTH_LONG).show();
+        });
 
         travailViewModel.getListeTravail().observe(this, travaux -> {
             List<Travail> urgents = travaux.stream()
