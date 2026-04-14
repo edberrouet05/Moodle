@@ -9,7 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.etsmtl.minimoodle.modeles.ResultatQuiz;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class MoodleDatabase extends SQLiteOpenHelper {
 
@@ -196,5 +198,17 @@ public class MoodleDatabase extends SQLiteOpenHelper {
         return existe;
     }
 
+    public Set<Integer> getQuizTerminesIds(String userId) {
+        SQLiteDatabase db = getReadableDatabase();
+        Set<Integer> ids = new HashSet<>();
+        Cursor cursor = db.query(TABLE_RESULTATS, new String[]{COL_QUIZ_ID},
+                COL_USER_ID + "=?", new String[]{userId},
+                COL_QUIZ_ID, null, null);
+        while (cursor.moveToNext()) {
+            ids.add(cursor.getInt(cursor.getColumnIndexOrThrow(COL_QUIZ_ID)));
+        }
+        cursor.close();
+        return ids;
+    }
 
 }

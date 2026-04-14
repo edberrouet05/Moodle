@@ -24,6 +24,8 @@
     <!-- Dashboard -->
     <string name="titre_tableau_de_bord">Tableau de bord</string>
     <string name="titre_mes_cours">Mes cours</string>
+    <string name="titre_travaux_recents">Travaux à faire</string>
+    <string name="titre_quiz_disponibles">Quiz disponibles</string>
 
     <!-- Cours -->
     <string name="titre_cours">Cours</string>
@@ -33,9 +35,34 @@
     <string name="titre_travaux">Travaux</string>
     <string name="titre_quiz">Quiz</string>
 
+    <!-- Travail -->
+    <string name="titre_detail_travail">Détail du travail</string>
+    <string name="label_date_remise">Date de remise</string>
+    <string name="label_note">Note</string>
+    <string name="label_statut">Statut</string>
+    <string name="statut_remis">Remis</string>
+    <string name="statut_non_remis">À faire</string>
+    <string name="statut_en_retard">En retard</string>
+    <string name="statut_corrige">Corrigé</string>
+    <string name="btn_soumettre">Soumettre</string>
+
+    <!-- Quiz -->
+    <string name="titre_quiz_list">Quiz disponibles</string>
+    <string name="titre_quiz_actif">Question</string>
+    <string name="statut_quiz_non_commence">Non commencé</string>
+    <string name="statut_quiz_termine">Terminé</string>
+    <string name="btn_suivant">Suivant</string>
+    <string name="btn_terminer">Terminer</string>
+    <string name="titre_resultat">Résultat</string>
+    <string name="label_score">Score</string>
+    <string name="btn_retour_cours">Retour aux cours</string>
+
+    <!-- Profil -->
+    <string name="titre_profil">Mon profil</string>
+    <string name="btn_deconnexion">Se déconnecter</string>
+
     <!-- Général -->
     <string name="chargement">Chargement…</string>
     <string name="erreur_reseau">Impossible de contacter le serveur</string>
     <string name="btn_retour">Retour</string>
-    <string name="btn_deconnexion">Se déconnecter</string>
 </resources>

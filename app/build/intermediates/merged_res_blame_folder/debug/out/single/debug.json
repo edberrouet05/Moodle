@@ -1,0 +1,78 @@
+[
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_activity_cours_list.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/activity_cours_list.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_activity_quiz_resultat.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/activity_quiz_resultat.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_activity_travail_detail.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/activity_travail_detail.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_item_resultat_quiz.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/item_resultat_quiz.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_activity_profil.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/activity_profil.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_activity_cours_detail.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/activity_cours_detail.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_activity_quiz.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/activity_quiz.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_item_travail.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/item_travail.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_activity_quiz_list.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/activity_quiz_list.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_item_quiz.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/item_quiz.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_activity_login.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_item_cours.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/item_cours.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_activity_register.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_activity_dashboard.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/activity_dashboard.xml"
+    }
+]

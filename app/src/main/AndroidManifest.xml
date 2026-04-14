@@ -25,6 +25,11 @@
         <activity android:name=".activites.DashboardActivity" />
         <activity android:name=".activites.CoursListActivity" />
         <activity android:name=".activites.CoursDetailActivity" />
+        <activity android:name=".activites.TravailDetailActivity" />
+        <activity android:name=".activites.QuizListActivity" />
+        <activity android:name=".activites.QuizActivity" />
+        <activity android:name=".activites.QuizResultatActivity" />
+        <activity android:name=".activites.ProfilActivity" />
 
     </application>
 

@@ -255,9 +255,7 @@ public class HttpJsonService {
             }
         });
     }
-}
 
-    // Ajout en bas de la classe — à insérer avant le dernier 
     public void mettreAJourUtilisateur(String userId, Utilisateur utilisateur, EcouteurDeDonnees ecouteur) throws IOException {
         String jsonBody = mapper.writeValueAsString(utilisateur);
         RequestBody body = RequestBody.create(jsonBody, JSON);
