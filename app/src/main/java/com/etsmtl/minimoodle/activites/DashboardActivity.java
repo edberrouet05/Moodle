@@ -70,7 +70,7 @@ public class DashboardActivity extends AppCompatActivity {
 
         travailAdapter = new TravailAdapter(new ArrayList<>(), travail -> {
             Intent intent = new Intent(this, TravailDetailActivity.class);
-            intent.putExtra("COURS_ID", travail.getCourseId());
+            intent.putExtra("COURS_ID", travail.getCoursId());
             startActivity(intent);
         });
 
