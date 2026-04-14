@@ -24,7 +24,7 @@
 17-->[androidx.core:core:1.9.0] C:\Users\dande\.gradle\caches\transforms-3\a309491863f1cad1388d82071cb60f8c\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 18
 19    <application
-19-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:6:5-34:19
+19-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:6:5-35:19
 20        android:allowBackup="true"
 20-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:7:9-35
 21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -39,55 +39,57 @@
 26-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:10:9-54
 27        android:supportsRtl="true"
 27-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:11:9-35
-28        android:testOnly="true"
-29        android:theme="@style/Theme.MiniMoodle"
-29-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:12:9-48
-30        android:usesCleartextTraffic="true" >
-30-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:13:9-44
-31        <activity
-31-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:15:9-22:20
-32            android:name="com.etsmtl.minimoodle.activites.LoginActivity"
-32-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:16:13-52
-33            android:exported="true" >
-33-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:17:13-36
-34            <intent-filter>
-34-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:18:13-21:29
-35                <action android:name="android.intent.action.MAIN" />
-35-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:19:17-69
-35-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:19:25-66
-36
-37                <category android:name="android.intent.category.LAUNCHER" />
-37-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:20:17-77
-37-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:20:27-74
-38            </intent-filter>
-39        </activity>
-40        <activity android:name="com.etsmtl.minimoodle.activites.RegisterActivity" />
-40-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:24:9-64
-40-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:24:19-61
-41        <activity android:name="com.etsmtl.minimoodle.activites.DashboardActivity" />
-41-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:25:9-65
-41-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:25:19-62
-42        <activity android:name="com.etsmtl.minimoodle.activites.CoursListActivity" />
-42-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:26:9-65
-42-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:26:19-62
-43        <activity android:name="com.etsmtl.minimoodle.activites.CoursDetailActivity" />
-43-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:27:9-67
-43-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:27:19-64
-44        <activity android:name="com.etsmtl.minimoodle.activites.TravailDetailActivity" />
-44-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:28:9-69
-44-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:28:19-66
-45        <activity android:name="com.etsmtl.minimoodle.activites.QuizListActivity" />
-45-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:29:9-64
-45-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:29:19-61
-46        <activity android:name="com.etsmtl.minimoodle.activites.QuizActivity" />
-46-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:30:9-60
-46-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:30:19-57
-47        <activity android:name="com.etsmtl.minimoodle.activites.QuizResultatActivity" />
-47-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:31:9-68
-47-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:31:19-65
-48        <activity android:name="com.etsmtl.minimoodle.activites.ProfilActivity" />
-48-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:32:9-62
-48-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:32:19-59
+28        android:theme="@style/Theme.MiniMoodle"
+28-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:12:9-48
+29        android:usesCleartextTraffic="true" >
+29-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:13:9-44
+30        <activity
+30-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:15:9-22:20
+31            android:name="com.etsmtl.minimoodle.activites.LoginActivity"
+31-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:16:13-52
+32            android:exported="true" >
+32-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:17:13-36
+33            <intent-filter>
+33-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:18:13-21:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:19:17-69
+34-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:19:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:20:17-77
+36-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:20:27-74
+37            </intent-filter>
+38        </activity>
+39        <activity android:name="com.etsmtl.minimoodle.activites.RegisterActivity" />
+39-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:24:9-64
+39-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:24:19-61
+40        <activity android:name="com.etsmtl.minimoodle.activites.DashboardActivity" />
+40-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:25:9-65
+40-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:25:19-62
+41        <activity android:name="com.etsmtl.minimoodle.activites.CoursListActivity" />
+41-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:26:9-65
+41-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:26:19-62
+42        <activity android:name="com.etsmtl.minimoodle.activites.CoursDetailActivity" />
+42-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:27:9-67
+42-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:27:19-64
+43        <activity android:name="com.etsmtl.minimoodle.activites.TravailDetailActivity" />
+43-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:28:9-69
+43-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:28:19-66
+44        <activity android:name="com.etsmtl.minimoodle.activites.QuizListActivity" />
+44-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:29:9-64
+44-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:29:19-61
+45        <activity android:name="com.etsmtl.minimoodle.activites.QuizActivity" />
+45-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:30:9-60
+45-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:30:19-57
+46        <activity android:name="com.etsmtl.minimoodle.activites.QuizResultatActivity" />
+46-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:31:9-68
+46-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:31:19-65
+47        <activity android:name="com.etsmtl.minimoodle.activites.ProfilActivity" />
+47-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:32:9-62
+47-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:32:19-59
+48        <activity android:name="com.etsmtl.minimoodle.activites.TravailInfoActivity" />
+48-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:33:9-67
+48-->C:\Users\dande\Moodle\Moodle\app\src\main\AndroidManifest.xml:33:19-64
 49
 50        <provider
 50-->[androidx.emoji2:emoji2:1.2.0] C:\Users\dande\.gradle\caches\transforms-3\70145bbbde0c2efc56f871bf5a5b1060\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20

@@ -1,15 +1,19 @@
 [
     {
-        "merged": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-merged_res-33:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-main-35:\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-merged_res-33:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-main-35:\\layout\\activity_login.xml"
     },
     {
         "merged": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-merged_res-33:\\menu_bottom_nav_menu.xml.flat",
         "source": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-main-35:\\menu\\bottom_nav_menu.xml"
     },
     {
-        "merged": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-merged_res-33:\\layout_activity_login.xml.flat",
-        "source": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-main-35:\\layout\\activity_login.xml"
+        "merged": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-merged_res-33:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-main-35:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_activity_cours_list.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/activity_cours_list.xml"
     },
     {
         "merged": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-merged_res-33:\\layout_activity_quiz_resultat.xml.flat",
@@ -30,6 +34,10 @@
     {
         "merged": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-merged_res-33:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-main-35:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_activity_cours_detail.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/activity_cours_detail.xml"
     },
     {
         "merged": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-merged_res-33:\\layout_activity_travail_detail.xml.flat",
@@ -60,10 +68,6 @@
         "source": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-main-35:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_item_cours.xml.flat",
-        "source": "com.etsmtl.minimoodle.app-main-35:/layout/item_cours.xml"
-    },
-    {
         "merged": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-merged_res-33:\\layout_item_cours.xml.flat",
         "source": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-main-35:\\layout\\item_cours.xml"
     },
@@ -74,6 +78,10 @@
     {
         "merged": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-merged_res-33:\\layout_activity_quiz.xml.flat",
         "source": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-main-35:\\layout\\activity_quiz.xml"
+    },
+    {
+        "merged": "com.etsmtl.minimoodle.app-merged_res-33:/layout_activity_travail_info.xml.flat",
+        "source": "com.etsmtl.minimoodle.app-main-35:/layout/activity_travail_info.xml"
     },
     {
         "merged": "C:\\Users\\dande\\.gradle\\daemon\\8.2\\com.etsmtl.minimoodle.app-merged_res-33:\\layout_activity_cours_detail.xml.flat",

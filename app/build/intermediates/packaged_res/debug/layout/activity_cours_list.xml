@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     android:background="@color/gris_clair">
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blanc"
+        app:iconifiedByDefault="false"
+        app:queryHint="Rechercher un cours..."
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
@@ -22,7 +33,7 @@
         android:layout_height="0dp"
         android:padding="8dp"
         android:clipToPadding="false"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
