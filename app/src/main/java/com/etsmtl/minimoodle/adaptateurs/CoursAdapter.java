@@ -45,7 +45,7 @@ public class CoursAdapter extends RecyclerView.Adapter<CoursAdapter.CoursViewHol
         Cours cours = listeCours.get(position);
         holder.txtSigle.setText(cours.getSigle());
         holder.txtTitre.setText(cours.getTitre());
-        holder.txtCredits.setText(cours.getCredits() + " cr.");
+        holder.txtCredits.setText(cours.getEnseignant() != null ? cours.getEnseignant() : "");
         holder.itemView.setOnClickListener(v -> listener.onClick(cours));
     }
 

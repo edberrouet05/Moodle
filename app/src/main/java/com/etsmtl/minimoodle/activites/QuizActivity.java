@@ -29,7 +29,7 @@ public class QuizActivity extends AppCompatActivity {
     private List<Question> questions;
     private int indexQuestion = 0;
     private int score = 0;
-    private int quizId;
+    private String quizId;
     private String quizTitre;
     private String userId;
 
@@ -44,7 +44,7 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
-        quizId = getIntent().getIntExtra("QUIZ_ID", -1);
+        quizId = getIntent().getStringExtra("QUIZ_ID");
         quizTitre = getIntent().getStringExtra("QUIZ_TITRE");
 
         String[] session = MoodleDatabase.getInstance(this).getSession();

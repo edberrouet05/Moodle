@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -105,9 +106,18 @@ public class HttpJsonService {
         });
     }
 
-    public void getCoursByUserId(String userId, EcouteurDeDonnees ecouteur) {
+    public void getCoursParIds(List<String> ids, EcouteurDeDonnees ecouteur) {
+        if (ids == null || ids.isEmpty()) {
+            getCours(ecouteur);
+            return;
+        }
+        StringBuilder urlBuilder = new StringBuilder(URL_BASE + "/courses?");
+        for (int i = 0; i < ids.size(); i++) {
+            if (i > 0) urlBuilder.append("&");
+            urlBuilder.append("id=").append(ids.get(i));
+        }
         Request request = new Request.Builder()
-                .url(URL_BASE + "/courses?userId=" + userId)
+                .url(urlBuilder.toString())
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -155,9 +165,9 @@ public class HttpJsonService {
         });
     }
 
-    public void getTravailByCourseId(int courseId, EcouteurDeDonnees ecouteur) {
+    public void getTravailByCourseId(String coursId, EcouteurDeDonnees ecouteur) {
         Request request = new Request.Builder()
-                .url(URL_BASE + "/assignments?courseId=" + courseId)
+                .url(URL_BASE + "/assignments?courseId=" + coursId)
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -179,8 +189,8 @@ public class HttpJsonService {
         });
     }
 
-    public void soumettreTravail(int travailId, EcouteurDeDonnees ecouteur) throws IOException {
-        String jsonBody = "{\"remis\": true}";
+    public void soumettreTravail(String travailId, EcouteurDeDonnees ecouteur) throws IOException {
+        String jsonBody = "{\"status\": \"Remis\"}";
         RequestBody body = RequestBody.create(jsonBody, JSON);
         Request request = new Request.Builder()
                 .url(URL_BASE + "/assignments/" + travailId)
@@ -208,9 +218,9 @@ public class HttpJsonService {
 
     // ─── Quiz ────────────────────────────────────────────────────────────────────
 
-    public void getQuizByCourseId(int courseId, EcouteurDeDonnees ecouteur) {
+    public void getQuizByCourseId(String coursId, EcouteurDeDonnees ecouteur) {
         Request request = new Request.Builder()
-                .url(URL_BASE + "/quizzes?courseId=" + courseId)
+                .url(URL_BASE + "/quizzes?courseId=" + coursId)
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
@@ -232,7 +242,7 @@ public class HttpJsonService {
         });
     }
 
-    public void getQuizParId(int quizId, EcouteurDeDonnees ecouteur) {
+    public void getQuizParId(String quizId, EcouteurDeDonnees ecouteur) {
         Request request = new Request.Builder()
                 .url(URL_BASE + "/quizzes/" + quizId)
                 .build();
@@ -306,5 +316,4 @@ public class HttpJsonService {
             }
         });
     }
-
 }

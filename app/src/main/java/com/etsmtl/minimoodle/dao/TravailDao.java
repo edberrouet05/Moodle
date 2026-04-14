@@ -11,11 +11,11 @@ public class TravailDao {
         new HttpJsonService().getTravaux(ecouteur);
     }
 
-    public static void getTravailByCourseId(int courseId, EcouteurDeDonnees ecouteur) throws IOException {
-        new HttpJsonService().getTravailByCourseId(courseId, ecouteur);
+    public static void getTravailByCourseId(String coursId, EcouteurDeDonnees ecouteur) throws IOException {
+        new HttpJsonService().getTravailByCourseId(coursId, ecouteur);
     }
 
-    public static void soumettreTravail(int travailId, EcouteurDeDonnees ecouteur) throws IOException {
+    public static void soumettreTravail(String travailId, EcouteurDeDonnees ecouteur) throws IOException {
         new HttpJsonService().soumettreTravail(travailId, ecouteur);
     }
 }

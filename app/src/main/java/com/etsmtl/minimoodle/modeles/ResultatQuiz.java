@@ -2,7 +2,7 @@ package com.etsmtl.minimoodle.modeles;
 
 public class ResultatQuiz {
 
-    private int quizId;
+    private String quizId;
     private String titreQuiz;
     private int score;
     private int total;
@@ -10,7 +10,7 @@ public class ResultatQuiz {
 
     public ResultatQuiz() {}
 
-    public ResultatQuiz(int quizId, String titreQuiz, int score, int total, String datePassage) {
+    public ResultatQuiz(String quizId, String titreQuiz, int score, int total, String datePassage) {
         this.quizId = quizId;
         this.titreQuiz = titreQuiz;
         this.score = score;
@@ -18,8 +18,8 @@ public class ResultatQuiz {
         this.datePassage = datePassage;
     }
 
-    public int getQuizId() { return quizId; }
-    public void setQuizId(int quizId) { this.quizId = quizId; }
+    public String getQuizId() { return quizId; }
+    public void setQuizId(String quizId) { this.quizId = quizId; }
 
     public String getTitreQuiz() { return titreQuiz; }
     public void setTitreQuiz(String titreQuiz) { this.titreQuiz = titreQuiz; }

@@ -22,16 +22,16 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
     }
 
     private List<Quiz> listeQuiz;
-    private Set<Integer> quizTermines;
+    private Set<String> quizTermines;
     private final OnQuizClickListener listener;
 
-    public QuizAdapter(List<Quiz> listeQuiz, Set<Integer> quizTermines, OnQuizClickListener listener) {
+    public QuizAdapter(List<Quiz> listeQuiz, Set<String> quizTermines, OnQuizClickListener listener) {
         this.listeQuiz = listeQuiz;
         this.quizTermines = quizTermines;
         this.listener = listener;
     }
 
-    public void mettreAJour(List<Quiz> nouvelleListe, Set<Integer> termines) {
+    public void mettreAJour(List<Quiz> nouvelleListe, Set<String> termines) {
         this.listeQuiz = nouvelleListe;
         this.quizTermines = termines;
         notifyDataSetChanged();

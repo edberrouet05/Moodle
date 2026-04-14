@@ -49,6 +49,7 @@ public class DashboardActivity extends AppCompatActivity {
         }
 
         userId = session[0];
+        String idsInscrits = session[4];
         String prenom = session[2];
 
         TextView txtBienvenue = findViewById(R.id.txt_bienvenue);
@@ -66,6 +67,7 @@ public class DashboardActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+
         travailAdapter = new TravailAdapter(new ArrayList<>(), travail -> {
             Intent intent = new Intent(this, TravailDetailActivity.class);
             intent.putExtra("COURS_ID", travail.getCourseId());
@@ -78,6 +80,7 @@ public class DashboardActivity extends AppCompatActivity {
             intent.putExtra("QUIZ_TITRE", quiz.getTitre());
             startActivity(intent);
         });
+
 
         rvCours.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         rvCours.setAdapter(coursAdapter);
@@ -108,7 +111,7 @@ public class DashboardActivity extends AppCompatActivity {
                     new HashSet<>(db.getQuizTerminesIds(userId)));
         });
 
-        coursViewModel.chargerCoursByUserId(userId);
+        coursViewModel.chargerCoursParIds(idsInscrits);
         travailViewModel.chargerTousTravaux();
         quizViewModel.chargerTousQuiz();
 

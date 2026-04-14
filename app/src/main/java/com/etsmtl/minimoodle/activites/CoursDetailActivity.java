@@ -16,7 +16,7 @@ public class CoursDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cours_detail);
 
-        int coursId = getIntent().getIntExtra("COURS_ID", -1);
+        String coursId = getIntent().getStringExtra("COURS_ID");
         String coursTitre = getIntent().getStringExtra("COURS_TITRE");
         String coursSigle = getIntent().getStringExtra("COURS_SIGLE");
 
@@ -46,6 +46,7 @@ public class CoursDetailActivity extends AppCompatActivity {
             intent.putExtra("COURS_TITRE", coursTitre);
             startActivity(intent);
         });
+
     }
 
     @Override

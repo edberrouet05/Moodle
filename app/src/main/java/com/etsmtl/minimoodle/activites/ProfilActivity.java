@@ -42,12 +42,12 @@ public class ProfilActivity extends AppCompatActivity {
             return;
         }
 
-        // session: [0]=userId, [1]=nom, [2]=prenom, [3]=courriel, [4]=programme, [5]=telephone, [6]=photo
+        // session : [0]=idUtilisateur, [1]=nom, [2]=prenom, [3]=courriel, [4]=idsInscrits, [5]=telephone, [6]=photo
         userId = session[0];
         String nom = session[1];
         String prenom = session[2];
         String courriel = session[3];
-        String programme = session[4];
+        String idsInscrits = session[4];
         String telephone = session.length > 5 ? session[5] : "";
         String photo = session.length > 6 ? session[6] : "";
 
@@ -66,7 +66,7 @@ public class ProfilActivity extends AppCompatActivity {
 
         txtNomComplet.setText(prenom + " " + nom);
         txtCourriel.setText(courriel);
-        txtProgramme.setText(programme != null ? programme : "");
+        txtProgramme.setText("");
 
         if (champPrenom != null) champPrenom.setText(prenom);
         if (champTelephone != null && telephone != null) champTelephone.setText(telephone);
@@ -86,7 +86,7 @@ public class ProfilActivity extends AppCompatActivity {
                 String newTel = champTelephone.getText().toString().trim();
                 String newPhoto = champPhotoProfil.getText().toString().trim();
                 db.sauvegarderSession(userId, nom, newPrenom.isEmpty() ? prenom : newPrenom,
-                        courriel, programme, newTel, newPhoto);
+                        courriel, idsInscrits, newTel, newPhoto);
                 txtNomComplet.setText((newPrenom.isEmpty() ? prenom : newPrenom) + " " + nom);
             }
         });

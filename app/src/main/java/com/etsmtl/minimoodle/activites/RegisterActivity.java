@@ -60,7 +60,6 @@ public class RegisterActivity extends AppCompatActivity {
             String prenom = champPrenom.getText().toString().trim();
             String courriel = champCourriel.getText().toString().trim();
             String motDePasse = champMotDePasse.getText().toString().trim();
-            String programme = champProgramme.getText().toString().trim();
             String telephone = champTelephone.getText().toString().trim();
             String photoProfil = champPhotoProfil.getText().toString().trim();
 
@@ -69,7 +68,7 @@ public class RegisterActivity extends AppCompatActivity {
                 return;
             }
 
-            authViewModel.inscrire(nom, prenom, courriel, motDePasse, programme, telephone, photoProfil);
+            authViewModel.inscrire(nom, prenom, courriel, motDePasse, telephone, photoProfil);
         });
 
         lienConnexion.setOnClickListener(v -> finish());

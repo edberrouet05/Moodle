@@ -7,11 +7,11 @@ import java.io.IOException;
 
 public class QuizDao {
 
-    public static void getQuizByCourseId(int courseId, EcouteurDeDonnees ecouteur) throws IOException {
-        new HttpJsonService().getQuizByCourseId(courseId, ecouteur);
+    public static void getQuizByCourseId(String coursId, EcouteurDeDonnees ecouteur) throws IOException {
+        new HttpJsonService().getQuizByCourseId(coursId, ecouteur);
     }
 
-    public static void getQuizParId(int quizId, EcouteurDeDonnees ecouteur) throws IOException {
+    public static void getQuizParId(String quizId, EcouteurDeDonnees ecouteur) throws IOException {
         new HttpJsonService().getQuizParId(quizId, ecouteur);
     }
 

@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.text.TextUtils;
+
 import com.etsmtl.minimoodle.R;
 import com.etsmtl.minimoodle.bd.MoodleDatabase;
 import com.etsmtl.minimoodle.modeles.Utilisateur;
@@ -44,12 +46,16 @@ public class LoginActivity extends AppCompatActivity {
 
         authViewModel.getUtilisateurConnecte().observe(this, utilisateur -> {
             if (utilisateur != null) {
+                String idsInscrits = "";
+                if (utilisateur.getCoursInscrits() != null) {
+                    idsInscrits = TextUtils.join(",", utilisateur.getCoursInscrits());
+                }
                 MoodleDatabase.getInstance(this).sauvegarderSession(
                         utilisateur.getId(),
                         utilisateur.getNom(),
                         utilisateur.getPrenom(),
                         utilisateur.getCourriel(),
-                        utilisateur.getProgramme(),
+                        idsInscrits,
                         utilisateur.getTelephone(),
                         utilisateur.getPhotoProfil()
                 );

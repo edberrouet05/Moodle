@@ -25,14 +25,14 @@ public class QuizListActivity extends AppCompatActivity {
     private QuizAdapter quizAdapter;
     private ProgressBar progressBar;
     private String userId;
-    private int coursId;
+    private String coursId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_list);
 
-        coursId = getIntent().getIntExtra("COURS_ID", -1);
+        coursId = getIntent().getStringExtra("COURS_ID");
         String coursTitre = getIntent().getStringExtra("COURS_TITRE");
 
         String[] session = MoodleDatabase.getInstance(this).getSession();
@@ -74,7 +74,7 @@ public class QuizListActivity extends AppCompatActivity {
         });
 
         progressBar.setVisibility(View.VISIBLE);
-        if (coursId != -1) {
+        if (coursId != null) {
             quizViewModel.chargerQuizByCourseId(coursId);
         } else {
             quizViewModel.chargerTousQuiz();
@@ -84,7 +84,7 @@ public class QuizListActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (coursId != -1) {
+        if (coursId != null) {
             quizViewModel.chargerQuizByCourseId(coursId);
         } else {
             quizViewModel.chargerTousQuiz();

@@ -54,13 +54,13 @@ public class AuthViewModel extends ViewModel {
     }
 
     public void inscrire(String nom, String prenom, String courriel, String motDePasse,
-                         String programme, String telephone, String photoProfil) {
+                         String telephone, String photoProfil) {
         Utilisateur nouvelUtilisateur = new Utilisateur();
         nouvelUtilisateur.setNom(nom);
         nouvelUtilisateur.setPrenom(prenom);
+        nouvelUtilisateur.setNomUtilisateur(prenom.toLowerCase() + "." + nom.toLowerCase());
         nouvelUtilisateur.setCourriel(courriel);
         nouvelUtilisateur.setMotDePasse(motDePasse);
-        nouvelUtilisateur.setProgramme(programme);
         nouvelUtilisateur.setTelephone(telephone.isEmpty() ? null : telephone);
         nouvelUtilisateur.setPhotoProfil(photoProfil.isEmpty() ? null : photoProfil);
 

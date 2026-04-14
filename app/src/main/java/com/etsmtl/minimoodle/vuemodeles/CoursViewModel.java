@@ -9,6 +9,7 @@ import com.etsmtl.minimoodle.modeles.Cours;
 import com.etsmtl.minimoodle.services.EcouteurDeDonnees;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 public class CoursViewModel extends ViewModel {
@@ -37,9 +38,14 @@ public class CoursViewModel extends ViewModel {
         }
     }
 
-    public void chargerCoursByUserId(String userId) {
+    public void chargerCoursParIds(String idsInscritsStr) {
+        if (idsInscritsStr == null || idsInscritsStr.isEmpty()) {
+            chargerCours();
+            return;
+        }
+        List<String> ids = Arrays.asList(idsInscritsStr.split(","));
         try {
-            CoursDao.getCoursByUserId(userId, new EcouteurDeDonnees() {
+            CoursDao.getCoursParIds(ids, new EcouteurDeDonnees() {
                 @Override
                 public void onDataLoaded(Object data) {
                     listeCoursLiveData.postValue((List<Cours>) data);

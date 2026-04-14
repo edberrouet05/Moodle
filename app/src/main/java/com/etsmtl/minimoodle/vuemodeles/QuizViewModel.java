@@ -21,7 +21,7 @@ public class QuizViewModel extends ViewModel {
     public LiveData<Quiz> getQuizActif() { return quizActifLiveData; }
     public LiveData<String> getErreur() { return erreur; }
 
-    public void chargerQuizByCourseId(int courseId) {
+    public void chargerQuizByCourseId(String courseId) {
         try {
             QuizDao.getQuizByCourseId(courseId, new EcouteurDeDonnees() {
                 @Override
@@ -39,7 +39,7 @@ public class QuizViewModel extends ViewModel {
         }
     }
 
-    public void chargerQuizParId(int quizId) {
+    public void chargerQuizParId(String quizId) {
         try {
             QuizDao.getQuizParId(quizId, new EcouteurDeDonnees() {
                 @Override

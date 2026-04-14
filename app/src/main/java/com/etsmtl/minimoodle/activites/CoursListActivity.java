@@ -58,8 +58,12 @@ public class CoursListActivity extends AppCompatActivity {
             }
         });
 
+        MoodleDatabase db = MoodleDatabase.getInstance(this);
+        String[] session = db.getSession();
+        String idsInscrits = (session != null && session.length > 4) ? session[4] : null;
+
         progressBar.setVisibility(View.VISIBLE);
-        coursViewModel.chargerCours();
+        coursViewModel.chargerCoursParIds(idsInscrits);
 
         configurerNavigation();
     }

@@ -29,7 +29,7 @@ public class TravailDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_travail_detail);
 
-        int coursId = getIntent().getIntExtra("COURS_ID", -1);
+        String coursId = getIntent().getStringExtra("COURS_ID");
         String coursTitre = getIntent().getStringExtra("COURS_TITRE");
 
         String[] session = MoodleDatabase.getInstance(this).getSession();
@@ -51,6 +51,7 @@ public class TravailDetailActivity extends AppCompatActivity {
             }
         });
 
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(travailAdapter);
 
@@ -68,6 +69,7 @@ public class TravailDetailActivity extends AppCompatActivity {
                 travailViewModel.chargerTravailByCourseId(coursId);
             }
         });
+
 
         travailViewModel.getErreur().observe(this, message -> {
             progressBar.setVisibility(View.GONE);

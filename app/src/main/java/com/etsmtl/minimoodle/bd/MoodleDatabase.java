@@ -16,7 +16,7 @@ import java.util.Set;
 public class MoodleDatabase extends SQLiteOpenHelper {
 
     private static final String NOM_BD = "minimoodle.db";
-    private static final int VERSION_BD = 2;
+    private static final int VERSION_BD = 3;
 
     // Table résultats quiz
     private static final String TABLE_RESULTATS = "resultats_quiz";
@@ -38,7 +38,7 @@ public class MoodleDatabase extends SQLiteOpenHelper {
     private static final String COL_NOM = "nom";
     private static final String COL_PRENOM = "prenom";
     private static final String COL_COURRIEL = "courriel";
-    private static final String COL_PROGRAMME = "programme";
+    private static final String COL_ENROLLED_IDS = "enrolled_course_ids";
     private static final String COL_TELEPHONE = "telephone";
     private static final String COL_PHOTO = "photo_profil";
 
@@ -59,7 +59,7 @@ public class MoodleDatabase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + TABLE_RESULTATS + " (" +
                 COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COL_QUIZ_ID + " INTEGER NOT NULL, " +
+                COL_QUIZ_ID + " TEXT NOT NULL, " +
                 COL_TITRE_QUIZ + " TEXT, " +
                 COL_SCORE + " INTEGER, " +
                 COL_TOTAL + " INTEGER, " +
@@ -68,7 +68,7 @@ public class MoodleDatabase extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE " + TABLE_SOUMISSIONS + " (" +
                 COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COL_TRAVAIL_ID + " INTEGER UNIQUE NOT NULL, " +
+                COL_TRAVAIL_ID + " TEXT UNIQUE NOT NULL, " +
                 COL_USER_ID + " TEXT)");
 
         db.execSQL("CREATE TABLE " + TABLE_SESSION + " (" +
@@ -77,7 +77,7 @@ public class MoodleDatabase extends SQLiteOpenHelper {
                 COL_NOM + " TEXT, " +
                 COL_PRENOM + " TEXT, " +
                 COL_COURRIEL + " TEXT, " +
-                COL_PROGRAMME + " TEXT, " +
+                COL_ENROLLED_IDS + " TEXT, " +
                 COL_TELEPHONE + " TEXT, " +
                 COL_PHOTO + " TEXT)");
     }
@@ -92,7 +92,7 @@ public class MoodleDatabase extends SQLiteOpenHelper {
 
     // ─── Session ─────────────────────────────────────────────────────────────────
 
-    public void sauvegarderSession(String userId, String nom, String prenom, String courriel, String programme, String telephone, String photo) {
+    public void sauvegarderSession(String userId, String nom, String prenom, String courriel, String idsInscrits, String telephone, String photo) {
         SQLiteDatabase db = getWritableDatabase();
         db.delete(TABLE_SESSION, null, null);
         ContentValues cv = new ContentValues();
@@ -101,7 +101,7 @@ public class MoodleDatabase extends SQLiteOpenHelper {
         cv.put(COL_NOM, nom);
         cv.put(COL_PRENOM, prenom);
         cv.put(COL_COURRIEL, courriel);
-        cv.put(COL_PROGRAMME, programme);
+        cv.put(COL_ENROLLED_IDS, idsInscrits);
         cv.put(COL_TELEPHONE, telephone);
         cv.put(COL_PHOTO, photo);
         db.insert(TABLE_SESSION, null, cv);
@@ -116,7 +116,7 @@ public class MoodleDatabase extends SQLiteOpenHelper {
                     cursor.getString(cursor.getColumnIndexOrThrow(COL_NOM)),
                     cursor.getString(cursor.getColumnIndexOrThrow(COL_PRENOM)),
                     cursor.getString(cursor.getColumnIndexOrThrow(COL_COURRIEL)),
-                    cursor.getString(cursor.getColumnIndexOrThrow(COL_PROGRAMME)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COL_ENROLLED_IDS)),
                     cursor.getString(cursor.getColumnIndexOrThrow(COL_TELEPHONE)),
                     cursor.getString(cursor.getColumnIndexOrThrow(COL_PHOTO))
             };
@@ -155,7 +155,7 @@ public class MoodleDatabase extends SQLiteOpenHelper {
 
         while (cursor.moveToNext()) {
             ResultatQuiz r = new ResultatQuiz(
-                    cursor.getInt(cursor.getColumnIndexOrThrow(COL_QUIZ_ID)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COL_QUIZ_ID)),
                     cursor.getString(cursor.getColumnIndexOrThrow(COL_TITRE_QUIZ)),
                     cursor.getInt(cursor.getColumnIndexOrThrow(COL_SCORE)),
                     cursor.getInt(cursor.getColumnIndexOrThrow(COL_TOTAL)),
@@ -167,11 +167,11 @@ public class MoodleDatabase extends SQLiteOpenHelper {
         return resultats;
     }
 
-    public boolean aDejaPasseQuiz(int quizId, String userId) {
+    public boolean aDejaPasseQuiz(String quizId, String userId) {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.query(TABLE_RESULTATS, new String[]{COL_ID},
                 COL_QUIZ_ID + "=? AND " + COL_USER_ID + "=?",
-                new String[]{String.valueOf(quizId), userId},
+                new String[]{quizId, userId},
                 null, null, null);
         boolean existe = cursor.getCount() > 0;
         cursor.close();
@@ -180,7 +180,7 @@ public class MoodleDatabase extends SQLiteOpenHelper {
 
     // ─── Soumissions locales ─────────────────────────────────────────────────────
 
-    public void marquerSoumisLocalement(int travailId, String userId) {
+    public void marquerSoumisLocalement(String travailId, String userId) {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COL_TRAVAIL_ID, travailId);
@@ -188,24 +188,24 @@ public class MoodleDatabase extends SQLiteOpenHelper {
         db.insertOrThrow(TABLE_SOUMISSIONS, null, cv);
     }
 
-    public boolean estSoumisLocalement(int travailId) {
+    public boolean estSoumisLocalement(String travailId) {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.query(TABLE_SOUMISSIONS, new String[]{COL_ID},
-                COL_TRAVAIL_ID + "=?", new String[]{String.valueOf(travailId)},
+                COL_TRAVAIL_ID + "=?", new String[]{travailId},
                 null, null, null);
         boolean existe = cursor.getCount() > 0;
         cursor.close();
         return existe;
     }
 
-    public Set<Integer> getQuizTerminesIds(String userId) {
+    public Set<String> getQuizTerminesIds(String userId) {
         SQLiteDatabase db = getReadableDatabase();
-        Set<Integer> ids = new HashSet<>();
+        Set<String> ids = new HashSet<>();
         Cursor cursor = db.query(TABLE_RESULTATS, new String[]{COL_QUIZ_ID},
                 COL_USER_ID + "=?", new String[]{userId},
                 COL_QUIZ_ID, null, null);
         while (cursor.moveToNext()) {
-            ids.add(cursor.getInt(cursor.getColumnIndexOrThrow(COL_QUIZ_ID)));
+            ids.add(cursor.getString(cursor.getColumnIndexOrThrow(COL_QUIZ_ID)));
         }
         cursor.close();
         return ids;

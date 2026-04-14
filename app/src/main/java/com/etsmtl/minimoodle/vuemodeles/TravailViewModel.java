@@ -21,9 +21,9 @@ public class TravailViewModel extends ViewModel {
     public LiveData<Travail> getTravailSoumis() { return travailSoumisLiveData; }
     public LiveData<String> getErreur() { return erreur; }
 
-    public void chargerTravailByCourseId(int courseId) {
+    public void chargerTravailByCourseId(String coursId) {
         try {
-            TravailDao.getTravailByCourseId(courseId, new EcouteurDeDonnees() {
+            TravailDao.getTravailByCourseId(coursId, new EcouteurDeDonnees() {
                 @Override
                 public void onDataLoaded(Object data) {
                     listeTravailLiveData.postValue((List<Travail>) data);
@@ -57,7 +57,7 @@ public class TravailViewModel extends ViewModel {
         }
     }
 
-    public void soumettreTravail(int travailId) {
+    public void soumettreTravail(String travailId) {
         try {
             TravailDao.soumettreTravail(travailId, new EcouteurDeDonnees() {
                 @Override
