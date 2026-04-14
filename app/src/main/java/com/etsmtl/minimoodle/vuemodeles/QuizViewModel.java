@@ -23,10 +23,19 @@ public class QuizViewModel extends ViewModel {
 
     public void chargerQuizByCourseId(String courseId) {
         try {
-            QuizDao.getQuizByCourseId(courseId, new EcouteurDeDonnees() {
+            QuizDao.getTousQuiz(new EcouteurDeDonnees() {
                 @Override
                 public void onDataLoaded(Object data) {
-                    listeQuizLiveData.postValue((List<Quiz>) data);
+                    List<Quiz> tous = (List<Quiz>) data;
+                    if (courseId == null) {
+                        listeQuizLiveData.postValue(tous);
+                        return;
+                    }
+                    java.util.List<Quiz> filtres = new java.util.ArrayList<>();
+                    for (Quiz q : tous) {
+                        if (courseId.equals(q.getCoursId())) filtres.add(q);
+                    }
+                    listeQuizLiveData.postValue(filtres);
                 }
 
                 @Override

@@ -23,10 +23,19 @@ public class TravailViewModel extends ViewModel {
 
     public void chargerTravailByCourseId(String coursId) {
         try {
-            TravailDao.getTravailByCourseId(coursId, new EcouteurDeDonnees() {
+            TravailDao.getTravaux(new EcouteurDeDonnees() {
                 @Override
                 public void onDataLoaded(Object data) {
-                    listeTravailLiveData.postValue((List<Travail>) data);
+                    List<Travail> tous = (List<Travail>) data;
+                    if (coursId == null) {
+                        listeTravailLiveData.postValue(tous);
+                        return;
+                    }
+                    java.util.List<Travail> filtres = new java.util.ArrayList<>();
+                    for (Travail t : tous) {
+                        if (coursId.equals(t.getCoursId())) filtres.add(t);
+                    }
+                    listeTravailLiveData.postValue(filtres);
                 }
 
                 @Override
