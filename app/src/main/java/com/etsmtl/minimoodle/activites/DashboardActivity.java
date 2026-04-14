@@ -23,7 +23,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -105,10 +104,14 @@ public class DashboardActivity extends AppCompatActivity {
         });
 
         travailViewModel.getListeTravail().observe(this, travaux -> {
-            List<Travail> urgents = travaux.stream()
-                    .filter(t -> t.getStatut() == Travail.Statut.A_FAIRE || t.getStatut() == Travail.Statut.EN_RETARD)
-                    .limit(3)
-                    .collect(Collectors.toList());
+            List<Travail> urgents = new java.util.ArrayList<>();
+            for (Travail t : travaux) {
+                Travail.Statut s = t.getStatut();
+                if (s == Travail.Statut.A_FAIRE || s == Travail.Statut.EN_RETARD) {
+                    urgents.add(t);
+                    if (urgents.size() == 3) break;
+                }
+            }
             travailAdapter.mettreAJour(urgents);
         });
 
