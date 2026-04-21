@@ -45,34 +45,44 @@ public class TravailAdapter extends RecyclerView.Adapter<TravailAdapter.TravailV
     public void onBindViewHolder(@NonNull TravailViewHolder holder, int position) {
         Travail travail = listeTravail.get(position);
         holder.txtTitre.setText(travail.getTitre());
+
+        if (holder.txtCoursId != null && travail.getCoursId() != null) {
+            holder.txtCoursId.setText(travail.getCoursId());
+        }
+
         holder.txtDateRemise.setText("Remise : " + travail.getDateRemise());
 
         Travail.Statut statut = travail.getStatut();
+
         switch (statut) {
+            case EN_RETARD:
+                holder.txtUrgent.setVisibility(View.VISIBLE);
+                holder.txtStatut.setText("En retard");
+                holder.txtStatut.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.bg_chip_rouge));
+                holder.txtNote.setVisibility(View.GONE);
+                break;
+            case A_FAIRE:
+                holder.txtUrgent.setVisibility(View.GONE);
+                holder.txtStatut.setText("À faire");
+                holder.txtStatut.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.bg_chip_orange));
+                holder.txtNote.setVisibility(View.GONE);
+                break;
+            case REMIS:
+                holder.txtUrgent.setVisibility(View.GONE);
+                holder.txtStatut.setText("Remis");
+                holder.txtStatut.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.bg_chip_vert));
+                holder.txtNote.setVisibility(View.GONE);
+                break;
             case CORRIGE:
-                holder.txtStatut.setText(holder.itemView.getContext().getString(R.string.statut_corrige));
-                holder.txtStatut.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.violet_corrige));
+                holder.txtUrgent.setVisibility(View.GONE);
+                holder.txtStatut.setText("Corrigé");
+                holder.txtStatut.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.bg_chip_violet));
                 if (travail.getNote() != null) {
                     holder.txtNote.setText(travail.getNote() + "/" + travail.getNoteMax());
                     holder.txtNote.setVisibility(View.VISIBLE);
                 } else {
                     holder.txtNote.setVisibility(View.GONE);
                 }
-                break;
-            case REMIS:
-                holder.txtStatut.setText(holder.itemView.getContext().getString(R.string.statut_remis));
-                holder.txtStatut.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.vert_succes));
-                holder.txtNote.setVisibility(View.GONE);
-                break;
-            case EN_RETARD:
-                holder.txtStatut.setText(holder.itemView.getContext().getString(R.string.statut_en_retard));
-                holder.txtStatut.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.orange_retard));
-                holder.txtNote.setVisibility(View.GONE);
-                break;
-            default:
-                holder.txtStatut.setText(holder.itemView.getContext().getString(R.string.statut_non_remis));
-                holder.txtStatut.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.rouge_erreur));
-                holder.txtNote.setVisibility(View.GONE);
                 break;
         }
 
@@ -86,14 +96,18 @@ public class TravailAdapter extends RecyclerView.Adapter<TravailAdapter.TravailV
 
     static class TravailViewHolder extends RecyclerView.ViewHolder {
         TextView txtTitre;
+        TextView txtCoursId;
         TextView txtDateRemise;
+        TextView txtUrgent;
         TextView txtStatut;
         TextView txtNote;
 
         TravailViewHolder(View itemView) {
             super(itemView);
             txtTitre = itemView.findViewById(R.id.txt_titre_travail);
+            txtCoursId = itemView.findViewById(R.id.txt_cours_id_travail);
             txtDateRemise = itemView.findViewById(R.id.txt_date_remise);
+            txtUrgent = itemView.findViewById(R.id.txt_urgent);
             txtStatut = itemView.findViewById(R.id.txt_statut);
             txtNote = itemView.findViewById(R.id.txt_note);
         }

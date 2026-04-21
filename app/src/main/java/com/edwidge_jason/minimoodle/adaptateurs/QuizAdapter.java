@@ -54,11 +54,13 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
 
         boolean termine = quizTermines != null && quizTermines.contains(quiz.getId());
         if (termine) {
-            holder.txtStatutQuiz.setText(holder.itemView.getContext().getString(R.string.statut_quiz_termine));
-            holder.txtStatutQuiz.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.vert_succes));
+            holder.txtStatutQuiz.setText("Terminé");
+            holder.txtStatutQuiz.setBackground(
+                    ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.bg_chip_vert));
         } else {
-            holder.txtStatutQuiz.setText(holder.itemView.getContext().getString(R.string.statut_quiz_non_commence));
-            holder.txtStatutQuiz.setTextColor(ContextCompat.getColor(holder.itemView.getContext(), R.color.couleur_primaire));
+            holder.txtStatutQuiz.setText("Non commencé");
+            holder.txtStatutQuiz.setBackground(
+                    ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.bg_chip_gris));
         }
 
         holder.itemView.setOnClickListener(v -> listener.onClick(quiz));

@@ -4,56 +4,106 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="6dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="3dp">
+    android:layout_marginHorizontal="0dp"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/blanc">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:minHeight="70dp">
 
-        <TextView
-            android:id="@+id/txt_titre_travail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            android:textColor="@color/texte_principal" />
+        <!-- Barre accent gauche -->
+        <View
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:minHeight="70dp"
+            android:background="@color/couleur_primaire" />
 
+        <!-- Contenu gauche -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/txt_titre_travail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/texte_principal"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+            <TextView
+                android:id="@+id/txt_cours_id_travail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/couleur_primaire"
+                android:textStyle="bold"
+                android:layout_marginTop="2dp" />
 
             <TextView
                 android:id="@+id/txt_date_remise"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="13sp"
-                android:textColor="@color/texte_secondaire" />
+                android:textSize="12sp"
+                android:textColor="@color/texte_secondaire"
+                android:layout_marginTop="2dp" />
+
+        </LinearLayout>
+
+        <!-- Badges à droite -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="end|center_vertical"
+            android:paddingEnd="12dp">
+
+            <TextView
+                android:id="@+id/txt_urgent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Urgent"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/blanc"
+                android:background="@drawable/bg_chip_rouge"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:layout_marginBottom="4dp"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/txt_statut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="13sp"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/blanc"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp" />
+
+            <TextView
+                android:id="@+id/txt_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/couleur_primaire"
+                android:textStyle="bold"
+                android:layout_marginTop="2dp"
+                android:visibility="gone" />
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/txt_note"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="@color/couleur_primaire"
-            android:textStyle="bold"
-            android:layout_marginTop="4dp"
-            android:visibility="gone" />
 
     </LinearLayout>
 
