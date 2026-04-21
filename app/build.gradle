@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.etsmtl.minimoodle'
+    namespace 'com.edwidge_jason.minimoodle'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.etsmtl.minimoodle"
+        applicationId "com.edwidge_jason.minimoodle"
         minSdk 26
         targetSdk 34
         versionCode 1
