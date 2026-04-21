@@ -17,11 +17,13 @@ public class AuthViewModel extends ViewModel {
     private final MutableLiveData<String> erreur = new MutableLiveData<>();
     private final MutableLiveData<Boolean> inscriptionReussie = new MutableLiveData<>();
     private final MutableLiveData<Boolean> miseAJourReussie = new MutableLiveData<>();
+    private final MutableLiveData<String> motDePasseRecupere = new MutableLiveData<>();
 
     public LiveData<Utilisateur> getUtilisateurConnecte() { return utilisateurConnecte; }
     public LiveData<String> getErreur() { return erreur; }
     public LiveData<Boolean> getInscriptionReussie() { return inscriptionReussie; }
     public LiveData<Boolean> getMiseAJourReussie() { return miseAJourReussie; }
+    public LiveData<String> getMotDePasseRecupere() { return motDePasseRecupere; }
 
     public void connecter(String courriel, String motDePasse) {
         try {
@@ -69,6 +71,31 @@ public class AuthViewModel extends ViewModel {
                 @Override
                 public void onDataLoaded(Object data) {
                     inscriptionReussie.postValue(true);
+                }
+
+                @Override
+                public void onError(String messageErreur) {
+                    erreur.postValue(messageErreur);
+                }
+            });
+        } catch (IOException e) {
+            erreur.postValue("Impossible de joindre le serveur");
+        }
+    }
+
+    public void recupererMotDePasse(String courriel) {
+        try {
+            UtilisateurDao.getUtilisateurs(new EcouteurDeDonnees() {
+                @Override
+                public void onDataLoaded(Object data) {
+                    List<Utilisateur> users = (List<Utilisateur>) data;
+                    for (Utilisateur u : users) {
+                        if (u.getCourriel() != null && u.getCourriel().equals(courriel)) {
+                            motDePasseRecupere.postValue(u.getMotDePasse());
+                            return;
+                        }
+                    }
+                    erreur.postValue("Aucun compte associé à ce courriel");
                 }
 
                 @Override
