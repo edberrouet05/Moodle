@@ -19,7 +19,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText champPrenom;
     private EditText champCourriel;
     private EditText champMotDePasse;
-    private EditText champProgramme;
+    private EditText champConfirmeMdp;
     private EditText champTelephone;
     private EditText champPhotoProfil;
     private AuthViewModel authViewModel;
@@ -33,7 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
         champPrenom = findViewById(R.id.champ_prenom);
         champCourriel = findViewById(R.id.champ_courriel);
         champMotDePasse = findViewById(R.id.champ_mot_de_passe);
-        champProgramme = findViewById(R.id.champ_programme);
+        champConfirmeMdp = findViewById(R.id.champ_confirme_mot_de_passe);
         champTelephone = findViewById(R.id.champ_telephone);
         champPhotoProfil = findViewById(R.id.champ_photo_profil);
         Button btnInscrire = findViewById(R.id.btn_inscription);
@@ -60,11 +60,16 @@ public class RegisterActivity extends AppCompatActivity {
             String prenom = champPrenom.getText().toString().trim();
             String courriel = champCourriel.getText().toString().trim();
             String motDePasse = champMotDePasse.getText().toString().trim();
+            String confirmeMdp = champConfirmeMdp.getText().toString().trim();
             String telephone = champTelephone.getText().toString().trim();
             String photoProfil = champPhotoProfil.getText().toString().trim();
 
             if (nom.isEmpty() || prenom.isEmpty() || courriel.isEmpty() || motDePasse.isEmpty()) {
                 Toast.makeText(this, getString(R.string.erreur_champs_vides), Toast.LENGTH_SHORT).show();
+                return;
+            }
+            if (!motDePasse.equals(confirmeMdp)) {
+                Toast.makeText(this, "Les mots de passe ne correspondent pas.", Toast.LENGTH_SHORT).show();
                 return;
             }
 
