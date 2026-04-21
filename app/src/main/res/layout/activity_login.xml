@@ -95,8 +95,19 @@
                 android:imeOptions="actionDone" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Message d'erreur -->
+        <TextView
+            android:id="@+id/texte_erreur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/rouge_erreur"
+            android:textSize="13sp"
+            android:visibility="gone" />
+
         <!-- Mot de passe oublié -->
         <TextView
+            android:id="@+id/lien_mdp_oublie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
