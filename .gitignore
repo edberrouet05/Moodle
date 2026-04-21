@@ -1,0 +1,19 @@
+# Dossiers de build Android
+build/
+app/build/
+.gradle/
+
+# Fichiers Android Studio / IntelliJ
+.idea/
+*.iml
+*.iws
+*.ipr
+local.properties
+
+# Fichiers de keystore (sécurité)
+*.jks
+*.keystore
+
+# Fichiers OS
+.DS_Store
+Thumbs.db

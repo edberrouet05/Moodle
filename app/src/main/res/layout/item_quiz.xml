@@ -4,46 +4,65 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="6dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="3dp">
+    android:layout_marginHorizontal="0dp"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@color/blanc">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:minHeight="64dp">
 
+        <!-- Barre accent gauche (orange = quiz) -->
+        <View
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:minHeight="64dp"
+            android:background="@color/couleur_secondaire" />
+
+        <!-- Contenu gauche -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="12dp">
 
             <TextView
                 android:id="@+id/txt_titre_quiz"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
-                android:textColor="@color/texte_principal" />
+                android:textColor="@color/texte_principal"
+                android:maxLines="2"
+                android:ellipsize="end" />
 
             <TextView
-                android:id="@+id/txt_statut_quiz"
+                android:id="@+id/txt_nb_questions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:textColor="@color/texte_secondaire"
+                android:layout_marginTop="3dp" />
 
         </LinearLayout>
 
+        <!-- Badge statut -->
         <TextView
-            android:id="@+id/txt_nb_questions"
+            android:id="@+id/txt_statut_quiz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="13sp"
-            android:textColor="@color/texte_secondaire"
-            android:layout_marginTop="6dp" />
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="@color/blanc"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="3dp"
+            android:layout_marginEnd="12dp" />
 
     </LinearLayout>
 
