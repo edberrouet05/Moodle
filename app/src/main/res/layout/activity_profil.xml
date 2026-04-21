@@ -18,21 +18,21 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- En-tête profil (fond bleu) -->
+            <!-- En-tête avatar centré (fond blanc) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/couleur_primaire"
+                android:background="@color/blanc"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:paddingTop="32dp"
-                android:paddingBottom="32dp">
+                android:paddingBottom="24dp">
 
-                <!-- Avatar cercle -->
+                <!-- Cercle avatar bleu -->
                 <FrameLayout
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:background="@drawable/bg_cercle_blanc">
+                    android:background="@drawable/bg_cercle_primaire">
 
                     <TextView
                         android:id="@+id/txt_initiales_avatar"
@@ -42,7 +42,7 @@
                         android:text="??"
                         android:textSize="28sp"
                         android:textStyle="bold"
-                        android:textColor="@color/couleur_primaire" />
+                        android:textColor="@color/blanc" />
                 </FrameLayout>
 
                 <TextView
@@ -52,7 +52,7 @@
                     android:layout_marginTop="12dp"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    android:textColor="@color/blanc" />
+                    android:textColor="@color/texte_principal" />
 
                 <TextView
                     android:id="@+id/txt_courriel_profil"
@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:textSize="14sp"
-                    android:textColor="#CCFFFFFF" />
+                    android:textColor="@color/texte_secondaire" />
 
             </LinearLayout>
 
@@ -138,7 +138,7 @@
                             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Photo de profil (URL)">
+                            android:hint="Photo de profil (URL, optionnel)">
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/champ_edit_photo"
                                 android:layout_width="match_parent"
