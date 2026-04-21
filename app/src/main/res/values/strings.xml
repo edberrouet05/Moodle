@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Mini Moodle</string>
+    <string name="logo_lettre">M</string>
 
     <!-- Auth -->
     <string name="label_courriel">Courriel</string>
@@ -8,13 +9,24 @@
     <string name="label_nom">Nom</string>
     <string name="label_prenom">Prénom</string>
     <string name="label_telephone">Téléphone (optionnel)</string>
+    <string name="label_telephone_court">Téléphone</string>
     <string name="label_photo_profil">Photo de profil (URL, optionnel)</string>
     <string name="btn_connexion">Se connecter</string>
     <string name="btn_inscription">S\'inscrire</string>
+    <string name="btn_creer_compte">Créer mon compte</string>
     <string name="lien_inscription">Pas encore de compte ? S\'inscrire</string>
     <string name="lien_connexion">Déjà un compte ? Se connecter</string>
+    <string name="lien_mdp_oublie">Mot de passe oublié?</string>
     <string name="erreur_champs_vides">Veuillez remplir tous les champs obligatoires</string>
     <string name="erreur_connexion">Courriel ou mot de passe incorrect</string>
+    <string name="titre_connexion">Connexion</string>
+    <string name="sous_titre_connexion">Accède à tes cours et travaux</string>
+    <string name="titre_creation_compte">Créer un compte</string>
+    <string name="sous_titre_creation_compte">Remplis les informations ci-dessous</string>
+    <string name="hint_confirme_mdp">Confirme le mot de passe</string>
+    <string name="hint_nouveau_mdp">Nouveau mot de passe</string>
+    <string name="helper_mdp">8 caractères minimum</string>
+    <string name="helper_nouveau_mdp">Laisser vide pour ne pas changer</string>
 
     <!-- Navigation -->
     <string name="nav_tableau_de_bord">Tableau de bord</string>
@@ -23,6 +35,15 @@
 
     <!-- Dashboard -->
     <string name="titre_tableau_de_bord">Tableau de bord</string>
+    <string name="bonjour">Bonjour,</string>
+    <string name="section_resume">RÉSUMÉ</string>
+    <string name="stat_cours_actifs">Cours actifs</string>
+    <string name="stat_travaux_a_faire">Travaux à faire</string>
+    <string name="stat_remis">Remis</string>
+    <string name="stat_en_retard">En retard</string>
+    <string name="section_travaux_a_remettre">TRAVAUX À REMETTRE</string>
+    <string name="section_quiz_recents">QUIZ RÉCENTS</string>
+    <string name="section_annonces_recentes">ANNONCES RÉCENTES</string>
     <string name="titre_mes_cours">Mes cours</string>
     <string name="titre_travaux_recents">Travaux à faire</string>
     <string name="titre_quiz_disponibles">Quiz disponibles</string>
@@ -36,6 +57,10 @@
     <string name="label_description">Description</string>
     <string name="titre_travaux">Travaux</string>
     <string name="titre_quiz">Quiz</string>
+    <string name="statut_cours_actif">Actif</string>
+    <string name="tab_tous">Tous</string>
+    <string name="tab_actifs">Actifs</string>
+    <string name="tab_termines">Terminés</string>
 
     <!-- Travail -->
     <string name="titre_detail_travail">Détail du travail</string>
@@ -46,7 +71,11 @@
     <string name="statut_non_remis">À faire</string>
     <string name="statut_en_retard">En retard</string>
     <string name="statut_corrige">Corrigé</string>
+    <string name="badge_urgent">Urgent</string>
+    <string name="label_consignes">Consignes</string>
+    <string name="label_commentaire_enseignant">Commentaire de l\'enseignant</string>
     <string name="btn_soumettre">Soumettre</string>
+    <string name="btn_marquer_remis">Marquer comme remis</string>
 
     <!-- Quiz -->
     <string name="titre_quiz_list">Quiz disponibles</string>
@@ -62,6 +91,10 @@
     <!-- Profil -->
     <string name="titre_profil">Mon profil</string>
     <string name="btn_deconnexion">Se déconnecter</string>
+    <string name="btn_enregistrer">Enregistrer les modifications</string>
+    <string name="section_info_personnelles">INFORMATIONS PERSONNELLES</string>
+    <string name="section_securite">SÉCURITÉ</string>
+    <string name="section_historique_quiz">HISTORIQUE DES QUIZ</string>
 
     <!-- Général -->
     <string name="chargement">Chargement…</string>
