@@ -18,6 +18,7 @@ import com.edwidge_jason.minimoodle.bd.MoodleDatabase;
 import com.edwidge_jason.minimoodle.modeles.Cours;
 import com.edwidge_jason.minimoodle.vuemodeles.CoursViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,7 @@ public class CoursListActivity extends AppCompatActivity {
     private CoursAdapter coursAdapter;
     private ProgressBar progressBar;
     private List<Cours> tousLesCours = new ArrayList<>();
+    private int ongletActif = 0; // 0=Tous, 1=Actifs, 2=Terminés
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,12 +68,25 @@ public class CoursListActivity extends AppCompatActivity {
             }
         });
 
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                ongletActif = tab.getPosition();
+                filtrerCours(searchView.getQuery().toString());
+            }
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {}
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {}
+        });
+
         coursViewModel = new ViewModelProvider(this).get(CoursViewModel.class);
 
         coursViewModel.getListeCours().observe(this, cours -> {
             progressBar.setVisibility(View.GONE);
             tousLesCours = cours;
-            coursAdapter.mettreAJour(cours);
+            filtrerCours(searchView.getQuery().toString());
         });
 
         coursViewModel.getErreur().observe(this, message -> {
@@ -92,19 +107,25 @@ public class CoursListActivity extends AppCompatActivity {
     }
 
     private void filtrerCours(String requete) {
-        if (requete == null || requete.trim().isEmpty()) {
-            coursAdapter.mettreAJour(tousLesCours);
-            return;
-        }
-        String q = requete.trim().toLowerCase();
+        String q = (requete != null) ? requete.trim().toLowerCase() : "";
         List<Cours> filtre = new ArrayList<>();
         for (Cours c : tousLesCours) {
-            if ((c.getSigle() != null && c.getSigle().toLowerCase().contains(q))
-                    || (c.getTitre() != null && c.getTitre().toLowerCase().contains(q))) {
-                filtre.add(c);
+            if (!q.isEmpty()) {
+                boolean correspondRecherche = (c.getSigle() != null && c.getSigle().toLowerCase().contains(q))
+                        || (c.getTitre() != null && c.getTitre().toLowerCase().contains(q));
+                if (!correspondRecherche) continue;
             }
+            if (ongletActif == 1 && !estCoursActif(c)) continue;
+            if (ongletActif == 2 && estCoursActif(c)) continue;
+            filtre.add(c);
         }
         coursAdapter.mettreAJour(filtre);
+    }
+
+    private boolean estCoursActif(Cours c) {
+        String session = c.getSession();
+        if (session == null) return true;
+        return session.contains("2026") || session.contains("2025");
     }
 
     private void configurerNavigation() {

@@ -26,7 +26,7 @@ public class ProfilActivity extends AppCompatActivity {
 
     private AuthViewModel authViewModel;
     private String userId;
-    private EditText champPrenom, champTelephone, champPhotoProfil, champMotDePasse;
+    private EditText champPrenom, champNom, champTelephone, champPhotoProfil, champMotDePasse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +54,10 @@ public class ProfilActivity extends AppCompatActivity {
         TextView txtNomComplet = findViewById(R.id.txt_nom_complet);
         TextView txtCourriel = findViewById(R.id.txt_courriel_profil);
         TextView txtProgramme = findViewById(R.id.txt_programme_profil);
+        TextView txtInitiales = findViewById(R.id.txt_initiales_avatar);
 
         champPrenom = findViewById(R.id.champ_edit_prenom);
+        champNom = findViewById(R.id.champ_edit_nom);
         champTelephone = findViewById(R.id.champ_edit_telephone);
         champPhotoProfil = findViewById(R.id.champ_edit_photo);
         champMotDePasse = findViewById(R.id.champ_edit_mot_de_passe);
@@ -66,9 +68,14 @@ public class ProfilActivity extends AppCompatActivity {
 
         txtNomComplet.setText(prenom + " " + nom);
         txtCourriel.setText(courriel);
-        txtProgramme.setText("");
+        txtProgramme.setText("Courriel : " + courriel);
+
+        String initP = (prenom != null && !prenom.isEmpty()) ? String.valueOf(prenom.charAt(0)).toUpperCase() : "";
+        String initN = (nom != null && !nom.isEmpty()) ? String.valueOf(nom.charAt(0)).toUpperCase() : "";
+        if (txtInitiales != null) txtInitiales.setText(initP + initN);
 
         if (champPrenom != null) champPrenom.setText(prenom);
+        if (champNom != null) champNom.setText(nom);
         if (champTelephone != null && telephone != null) champTelephone.setText(telephone);
         if (champPhotoProfil != null && photo != null) champPhotoProfil.setText(photo);
 
@@ -83,11 +90,17 @@ public class ProfilActivity extends AppCompatActivity {
             if (ok != null && ok) {
                 Toast.makeText(this, "Profil mis à jour !", Toast.LENGTH_SHORT).show();
                 String newPrenom = champPrenom.getText().toString().trim();
+                String newNom = champNom != null ? champNom.getText().toString().trim() : "";
                 String newTel = champTelephone.getText().toString().trim();
                 String newPhoto = champPhotoProfil.getText().toString().trim();
-                db.sauvegarderSession(userId, nom, newPrenom.isEmpty() ? prenom : newPrenom,
-                        courriel, idsInscrits, newTel, newPhoto);
-                txtNomComplet.setText((newPrenom.isEmpty() ? prenom : newPrenom) + " " + nom);
+                String savedPrenom = newPrenom.isEmpty() ? prenom : newPrenom;
+                String savedNom = newNom.isEmpty() ? nom : newNom;
+                db.sauvegarderSession(userId, savedNom, savedPrenom, courriel, idsInscrits, newTel, newPhoto);
+                txtNomComplet.setText(savedPrenom + " " + savedNom);
+                String initP2 = savedPrenom.isEmpty() ? "" : String.valueOf(savedPrenom.charAt(0)).toUpperCase();
+                String initN2 = savedNom.isEmpty() ? "" : String.valueOf(savedNom.charAt(0)).toUpperCase();
+                TextView txtInitiales2 = findViewById(R.id.txt_initiales_avatar);
+                if (txtInitiales2 != null) txtInitiales2.setText(initP2 + initN2);
             }
         });
 
@@ -97,6 +110,7 @@ public class ProfilActivity extends AppCompatActivity {
 
         btnModifier.setOnClickListener(v -> {
             String newPrenom = champPrenom.getText().toString().trim();
+            String newNom = champNom != null ? champNom.getText().toString().trim() : "";
             String newTel = champTelephone.getText().toString().trim();
             String newPhoto = champPhotoProfil.getText().toString().trim();
             String newMdp = champMotDePasse.getText().toString().trim();
@@ -105,7 +119,8 @@ public class ProfilActivity extends AppCompatActivity {
                 Toast.makeText(this, "Le prénom ne peut pas être vide.", Toast.LENGTH_SHORT).show();
                 return;
             }
-            authViewModel.mettreAJourProfil(userId, newPrenom, nom, newTel, newPhoto, newMdp);
+            authViewModel.mettreAJourProfil(userId, newPrenom, newNom.isEmpty() ? nom : newNom,
+                    newTel, newPhoto, newMdp);
         });
 
         btnDeconnexion.setOnClickListener(v -> {
