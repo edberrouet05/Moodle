@@ -29,6 +29,8 @@
 
     <!-- Cours -->
     <string name="titre_cours">Cours</string>
+    <string name="titre_annonces">Annonces</string>
+    <string name="aucune_annonce">Aucune annonce pour ce cours.</string>
     <string name="label_sigle">Sigle</string>
     <string name="label_credits">Crédits</string>
     <string name="label_description">Description</string>
