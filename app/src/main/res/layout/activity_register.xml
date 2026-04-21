@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Créer un compte"
+            android:text="@string/titre_creation_compte"
             android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="@color/texte_principal" />
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Remplis les informations ci-dessous"
+            android:text="@string/sous_titre_creation_compte"
             android:textSize="14sp"
             android:textColor="@color/texte_secondaire" />
 
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:hint="Prénom">
+            android:hint="@string/label_prenom">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/champ_prenom"
                 android:layout_width="match_parent"
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:hint="Nom">
+            android:hint="@string/label_nom">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/champ_nom"
                 android:layout_width="match_parent"
@@ -68,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:hint="Courriel">
+            android:hint="@string/label_courriel">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/champ_courriel"
                 android:layout_width="match_parent"
@@ -84,7 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:hint="Téléphone (optionnel)">
+            android:hint="@string/label_telephone">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/champ_telephone"
                 android:layout_width="match_parent"
@@ -100,8 +100,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:hint="Mot de passe"
-            app:helperText="8 caractères minimum"
+            android:hint="@string/label_mot_de_passe"
+            app:helperText="@string/helper_mdp"
             app:passwordToggleEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/champ_mot_de_passe"
@@ -118,7 +118,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:hint="Confirme le mot de passe"
+            android:hint="@string/hint_confirme_mdp"
             app:passwordToggleEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/champ_confirme_mot_de_passe"
@@ -135,7 +135,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:hint="Photo de profil (URL, optionnel)">
+            android:hint="@string/label_photo_profil">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/champ_photo_profil"
                 android:layout_width="match_parent"
@@ -151,7 +151,7 @@
             android:layout_height="56dp"
             android:layout_marginTop="28dp"
             android:backgroundTint="@color/couleur_primaire"
-            android:text="Créer mon compte"
+            android:text="@string/btn_creer_compte"
             android:textSize="16sp" />
 
         <!-- Lien connexion -->
@@ -162,7 +162,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:padding="8dp"
-            android:text="Déjà un compte ? Se connecter"
+            android:text="@string/lien_connexion"
             android:textColor="@color/couleur_primaire"
             android:textSize="14sp" />
 

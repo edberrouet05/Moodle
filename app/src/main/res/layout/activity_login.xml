@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="M"
+                android:text="@string/logo_lettre"
                 android:textSize="32sp"
                 android:textStyle="bold"
                 android:textColor="@color/blanc" />
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="12dp"
-            android:text="Mini Moodle"
+            android:text="@string/app_name"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="@color/couleur_primaire" />
@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="Connexion"
+            android:text="@string/titre_connexion"
             android:textSize="24sp"
             android:textStyle="bold"
             android:textColor="@color/texte_principal" />
@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Accède à tes cours et travaux"
+            android:text="@string/sous_titre_connexion"
             android:textSize="14sp"
             android:textColor="@color/texte_secondaire" />
 
@@ -67,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
-            android:hint="Courriel">
+            android:hint="@string/label_courriel">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/champ_courriel"
@@ -84,7 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:hint="Mot de passe"
+            android:hint="@string/label_mot_de_passe"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -101,7 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="4dp"
-            android:text="Mot de passe oublié?"
+            android:text="@string/lien_mdp_oublie"
             android:textColor="@color/couleur_primaire"
             android:textSize="13sp"
             android:padding="4dp" />
@@ -113,7 +113,7 @@
             android:layout_height="56dp"
             android:layout_marginTop="24dp"
             android:backgroundTint="@color/couleur_primaire"
-            android:text="Se connecter"
+            android:text="@string/btn_connexion"
             android:textSize="16sp" />
 
         <!-- Lien inscription -->
@@ -124,7 +124,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:padding="8dp"
-            android:text="Pas encore de compte ? S'inscrire"
+            android:text="@string/lien_inscription"
             android:textColor="@color/couleur_primaire"
             android:textSize="14sp" />
 

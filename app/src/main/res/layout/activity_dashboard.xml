@@ -36,7 +36,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bonjour,"
+                        android:text="@string/bonjour"
                         android:textSize="14sp"
                         android:textColor="@color/texte_secondaire" />
 
@@ -60,7 +60,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text=""
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="@color/blanc" />
@@ -73,7 +72,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="RÉSUMÉ"
+                android:text="@string/section_resume"
                 android:textSize="11sp"
                 android:textStyle="bold"
                 android:textColor="@color/texte_secondaire"
@@ -114,7 +113,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Cours actifs"
+                            android:text="@string/stat_cours_actifs"
                             android:textSize="10sp"
                             android:textColor="@color/texte_secondaire"
                             android:gravity="center" />
@@ -145,7 +144,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Travaux à faire"
+                            android:text="@string/stat_travaux_a_faire"
                             android:textSize="10sp"
                             android:textColor="@color/texte_secondaire"
                             android:gravity="center" />
@@ -176,7 +175,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Remis"
+                            android:text="@string/stat_remis"
                             android:textSize="10sp"
                             android:textColor="@color/texte_secondaire"
                             android:gravity="center" />
@@ -207,7 +206,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="En retard"
+                            android:text="@string/stat_en_retard"
                             android:textSize="10sp"
                             android:textColor="@color/texte_secondaire"
                             android:gravity="center" />
@@ -221,7 +220,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TRAVAUX À REMETTRE"
+                android:text="@string/section_travaux_a_remettre"
                 android:textSize="11sp"
                 android:textStyle="bold"
                 android:textColor="@color/texte_secondaire"
@@ -239,7 +238,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="QUIZ RÉCENTS"
+                android:text="@string/section_quiz_recents"
                 android:textSize="11sp"
                 android:textStyle="bold"
                 android:textColor="@color/texte_secondaire"
@@ -257,7 +256,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ANNONCES RÉCENTES"
+                android:text="@string/section_annonces_recentes"
                 android:textSize="11sp"
                 android:textStyle="bold"
                 android:textColor="@color/texte_secondaire"
